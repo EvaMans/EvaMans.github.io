@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">    
+<link href="https://fonts.googleapis.com/css2?family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Scope+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Rampart+One&family=Scope+One&display=swap" rel="stylesheet"><style>
+        body {
+            font-family: 'Scope one', serif;
+            margin: 0;
+            padding: 0.8%;
+            background-color: #D1F6FF;
+            font-size: 18px;
+            line-height: 32px;
+        }
+        header {
+            background: #5BAEB7;
+            color: #FFFFFF;
+            /*padding: 10px 0;*/
+            text-align: center;
+            border-radius: 5px;
+
+        }
+        .back-button {
+            position: center;
+            background: #5BAEB7;
+            color: #fff;
+            /*padding: 8px 15px;*/
+            border: none;
+            /*border-radius: 5px;*/
+            cursor: pointer;
+            font-size: 20px;
+            font-family: 'rampart one', sans-serif;
+        }
+        nav {
+            margin: 20px 0;
+            display: flex; /* Use flex to align items horizontally */
+            justify-content: center; /* Center the items */
+            position: relative; /* Required for dropdown positioning */
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+            display: inline-block; /* Ensure links display inline */
+        }
+        nav a:hover {
+            background: #ddd;
+        }
+        .dropdown {
+            display: none; /* Hidden by default */
+            position: absolute; /* Position it relative to the parent */
+            top: 100%; /* Position directly below the link */
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            z-index: 1000; /* Ensure dropdown is on top */
+        }
+        .about-me:hover .about-me-dropdown,
+        .learning-goals:hover .dropdown {
+            display: block; /* Show dropdown on hover */
+        }
+        .dropdown a {
+            display: block; /* Ensure dropdown items display as blocks for vertical alignment */
+            margin: 5px 0; /* Space between dropdown items */
+        }
+        /* Flex container for sections */
+        .sections-container {
+            display: flex; /* Use flexbox for layout */
+            flex-wrap: wrap; /* Allow sections to wrap on small screens */
+            /*justify-content: center; /* Center sections */
+            margin: 20px; /* Space around sections */
+        }
+        section {
+            padding: 50px;
+            padding-left: 156px;
+            padding-right: 160px;
+            background: #fff;
+            border-radius: 5px;
+            flex: 1 1 300px; /* Flex-grow, flex-shrink, and flex-basis */
+            margin: 100px; /* Space between sections */
+            display: none; /* Hide sections by default */
+            max-width: 1500px; /* Set a maximum width */
+            width: 90%; /* Ensures it shrinks on smaller screens */
+            margin: 10px auto; /* Centers the section */
+        }
+        section.active {
+            display: block; 
+        }
+        .scope-one-regular {
+  font-family: "Scope One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.rampart-one-regular {
+  font-family: "Rampart One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.content-container {
+    display: flex;
+    align-items: center; /* Centers text vertically to image */
+    justify-content: space-between;
+    /* width: 100%; */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 0px;
+}
+.text-content {
+    flex: 1;
+    width: 70%;
+    /*padding-right: 10px; /* Space between text and image */
+}
+td{
+    border: 1px solid black; 
+    border-collapse: collapse; 
+    padding-left: 15px;
+}
+th{
+    border: 1px solid black; 
+    border-collapse: collapse; 
+    padding-left: 15px;
+}
+hr{
+    color: #5BAEB7;
+    size: 13;
+    margin: 30px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <button class="back-button" href="#" onclick="showSection('main')"><h1>Portfolio Eva Mans</h1></button>
+    </header>
+    <nav>
+        <div class="about-me">
+            <a href="#"><b>About Me</b></a>
+            <div class="about-me-dropdown dropdown">
+                <a href="#" onclick="showSection('cv')">Curriculum Vitae</a>
+                <a href="#" onclick="showSection('choice')">Health and Digital Transformation</a>
+                <a href="#" onclick="showSection('education')">Education</a>
+                <a href="#" onclick="showSection('tests')">Personality Tests</a>
+            </div>
+        </div>
+        <a href="#" onclick="showSection('goals')"><b>Goals</b></a>
+        <div class="learning-goals">
+            <a href="#"><b>Progress</b></a>
+            <div class="dropdown" id="learning-dropdown">
+                <a href="#" onclick="showSection('expert')">Expert</a>
+                <a href="#" onclick="showSection('investigator')">Investigator</a>
+                <a href="#" onclick="showSection('communicator')">Communicator</a>
+                <a href="#" onclick="showSection('professional')">Professional</a>
+            </div>
+        </div>
+        <a href="#" onclick="showSection('logbook')"><b>Logbook</b></a>
+        <a href="#" onclick="showSection('meetings')"><b>Meetings</b></a>
+        <a href="#" onclick="showSection('reflection')"><b>Reflection</b></a>
+    </nav>
+    <div class="sections-container">
+
+        <section id="main" class="active">
+            <div class="content-container">
+                    <div class="text-content">
+            <h2>Welcome to my portfolio </h2>
+            <p>Welcome to my portfolio, created to share my academic and personal progress during the first months of my master’s in health and digital technology. We created SMART goals based on the HDT competencies – Expert, Investigator, Communicator, and Professional, and are working on this throughout the whole portfolio. Furthermore, some personal tests are included to learn more about myself and about my skills. Creating this portfolio involves you in actively taking steps towards a more professional attitude and working on your goals.
+                <br><br>The work represents a journey of learning, problem-solving, and adapting to the complexities of digital solutions within the healthcare sector. Each initiative highlights my development in data analysis, programming, and effective communication, along with insights gained from collaborative work with healthcare professionals.
+               <br><br> Through this portfolio, I aim to provide a comprehensive view of my skills, areas of interest, and progress in my goals, demonstrating my commitment for deeper contributions to healthcare technology and research. 
+            </div><div style="width:30%; margin-right:1%; margin-left:5%;"><img src="mezelf.jpg" alt="Me" style="width:75%;margin-left:0px;margin-right:10px;float:right;"></div></div>
+            </p>
+            <hr>        
+            <h3 style="margin-left: 40%;">Who am I? </h3>
+                  <div class="content-container">
+                <div style="width:30%; margin-right:5%; margin-left:5%;"><img src="rennen.jpg" alt="rennen" style="width: 80%;"></div>      <div class="text-content" style="margin-left:0px;">
+               <p> My name is Eva Mans, and I am 21 years old, born and raised in a small town called Valkenburg, Netherlands. Currently, I am pursuing a master’s degree in Health and Digital Transformation, where I combine my passion for healthcare and technology. Since September, I have been applying my knowledge in practice at Maastro, gaining valuable hands-on experience. Alongside my studies, I occasionally help out at the restaurant where I worked for six years, a place that will always have beautiful memories for me. <br><br>
+                Outside of work and academics, I have a variety of interests. I enjoy staying active, whether it is through sports, spending time with friends, cooking, or traveling. My favorite sport is padel because it is energetic, social, and always played with others. I also enjoy trying new activities at UM Sports and running through nature to clear my mind.  </div></div><br>
+                <div class="content-container">
+                    <div class="text-content">
+                        Whenever I have a few days off, you can often find me exploring new destinations. Whether it is a quick trip across the border to Belgium or a journey to the other side of the globe, I love experiencing new cities, nature, and cultures. Some of my most memorable adventures have been in South Africa and Sri Lanka, two incredibly diverse countries offering vibrant cityscapes and stunning wildlife. I believe traveling is more than just a leisure activity; it is an opportunity to personally grow, gain new perspectives, and connect with people from all around the world.</div> <div style="width:50%; margin-right:0%; margin-left:5%;"><img src="vakantie.jpg" alt="tuktuk" style="width: 50%; float:right;"><img src="grot.jpg" alt="tuktuk" style="width: 30%; float:right;"></div></div>
+                </p>
+            <h3 style="margin-left: 30%;"><br><hr><br>Interdisciplinary project</h3>
+            <div class="content-container">
+           <div style="width:20%; margin-right:5%; margin-left:5%;"><img src="mumc.png" alt="logo" style="width: 100%;"></div> <div class="text-content">
+            <p>I am currently involved in an interdisciplinary project called Maastricht Medication Datalink, which focuses on finding ways to prevent prescribing cascades. This project takes place at MUMC+, where our team of four fellow students collaborates every Wednesday to achieve our shared goal: creating a digital tool to prevent prescribing cascades. A prescribing cascade occurs when a drug causes an adverse reaction, leading to the prescription of additional drugs to address the side effects.
+               <br><br> In the first phase of the project, we focus on understanding prescribing cascades and conducting research on Prescription Sequence Symmetry Analysis (PSSA). Moving into the second phase, we will analyze a dataset using Python to identify common cascades. Ultimately, the aim is to program a tool that can detect cascades automatically and alert prescribers via a pop-up notification. However, we are aware that this goal may be ambitious given the project’s timeframe.
+                <br><br>The project is both challenging and rewarding. Before this, I was unaware of the concept of prescribing cascades, but I have come to realize that they represent a significant issue in healthcare. Addressing this problem could improve patient outcomes and help reduce healthcare costs.
+                <br><br>What excites me most about this project is its real-world relevance. The tool we are developing has the potential to be implemented in the hospital, making our work directly impactful. I am hopeful about our progress, as we have a dedicated team and an exceptionally supportive external coach. While our goals are ambitious, the combination of hard work and guidance gives me confidence in the project’s success.
+                         </div></div>
+            <h3>Personal Details</h3>
+            Eva Mans<br>
+            i6281116<br>
+            e.mans@student.maastrichtuniversity.nl<br>
+            Coach: Joost Verbeek<br>
+            HDT4050 – Interdisciplinary Project<br>
+            Portfolio period 2<br>
+            </p>
+        </section>
+        <section id="choice">
+            <div class="content-container"> <div class="text-content">
+                        <h2>Why Health and Digital Transformation?</h2>
+            <p>Data science and computer programming is something that has always intrigued me. During high school I went to programming classes with excitement, and I chose to focus my graduation project on this course. Together with a friend I programmed an interactive quiz website where people could answer questions, see their own and each other’s progress and could also suggest new questions. My friend was mostly doing the design, and I was doing most of the technical part. After choosing International Business over Data Science for a bachelor, I still wanted to do something with data science for my masters. </div><div style="width:30%; margin-left:5%;"><img src="datascience.png" alt="Data" style="width:75%; float:right;"></div></div><br><br>
+             <div class="content-container" style="margin-right:0px;">
+           <div style="width:30%; margin-right: 5%;"><img src="healthcare.png" alt="care" style="width:65%;float:left;"></div><div class="text-content">Additionally to the technical part, with my mom working in home care, my sister in the hospital and my dad in MedTech companies, my interest in healthcare also rose. My goal was to end up at Medtronic, however, how I ended up there was not clear to me. One option was to study supply chain management for my master and start working in the operational department, and the other option was to study data science and start in the IT. For me both masters were interesting, and both had futures with enough supply. However, after talking about my thesis with a friend another option was added, she mentioned the new master Health and Digital Transformation which perfectly aligned with my thesis. I wrote my thesis about analyzing the impact of predictive and descriptive analytics on healthcare supply chain operational efficiency. It included both the data science and healthcare part of this master. After doing some research about this master I was immediately sold. </div></div><br><br>
+                        <div class="content-container"> <div class="text-content">Combining data science and healthcare felt like the perfect path forward. This field allows me to bridge my technical interests with my connection to healthcare, and my passion for making an impact in this critical sector. The Health and Digital Transformation program brought together all I had been looking for, a place where data-driven solutions could improve healthcare efficiency, quality, and accessibility. This unique combination of disciplines not only aligned with my thesis research, but also with my broader career aspirations. It is a path that lets me blend analytics, technology and healthcare to help create tangible, positive change. Except for the interesting courses, I was also intrigued by the set-up of the program. I liked that the program does an interdisciplinary project, in which you can bring your knowledge to reality. </div><div style="width:30%; margin-left:5%;"><img src="combined.png" alt="Data" style="width:70%;float:right;"></div></div></p>
+        </section>
+        
+        <section id="cv">
+            <h2>Curriculum Vitae</h2>
+            <img src=" Curriculum_Vitae_Eva.png" style="width:80%">
+        </section>
+
+        <section id="education">
+            <h2>Me as a learner</h2>
+            <div class="content-container"><div class="text-content"> <p>My learning journey has experienced many ups and downs over the years. I was the kind of child who started reading books at the age of five but grew to dislike reading when it became a mandatory part of schoolwork at six. I loved subjects involving calculations during primary school, but it was evident from my grades that courses such as vocabulary and reading comprehension were not my strengths. On the other hand, I excelled in numerical courses and was even given the opportunity to work on extra assignments like “Rekentijger,” which I thoroughly enjoyed. 
+                <br><br>Despite my struggles with language-based courses, there was uncertainty about whether I should pursue the VWO track or the HAVO track. My parents believed that HAVO would be too easy for me and persuaded my teacher to recommend VWO. During high school, I was never among the top-performing students. I did what was required but rarely went beyond that. While I encountered my share of fails, I was always able to compensate and maintain balance in my grades. I had a natural affinity for mathematics, which influenced my decision to choose the N&T (Nature and Technology) package, even though my mentor discouraged me from taking a science-oriented path. However, I followed my instincts and found that I performed better in numerical subjects while having little interest in theoretical ones.</div><div style="width:30%; margin-right:0%; margin-left:10%;"><img src="rekentijger.jpg" alt="rekenen" style="width:80%;float:right;"></div></div>
+                <br><br><div class="content-container"><div style="width:30%; margin-right:5%; margin-left:5%;"><img src="sbe.png" alt="123 Team Test" style="width:80%;float:left;"></div><div class="text-content">When I began university, I was surprised by my academic performance. I had expected my grades to hover around a 6, but I graduated with an average of 7.91. The courses at university were far more engaging to me than those in high school, which significantly boosted my motivation. Another reason why this improvement might be, is due to the independence in university, not “wasting” time by listening to the teachers in high school, as I perform better by figuring out methods or solutions myself, and talk them over afterwards with a teacher. I aim to carry this motivation into my master's program, striving to maintain strong grades and, ideally, graduate university without needing to take any resits.</div></div>
+                </p>
+        </section>
+
+        <section id="tests">
+            <h2>Personality Tests</h2>
+            <p><div class="content-container" ><div class="text-content">      <h4>Big Five Personality Test</h4>
+                During the first week of university, we had to do a personality test about the Big Five Personalities. The outcome surprised me in some bits and made sense to me in others. The fact that openness to experience was only 7% surprised me the most. I am usually a very spontaneous person wanting to explore new experiences. Additionally, I do embrace change and new ideas. However, when I read the explanation a bit better it said that a low openness to experience implies that you work systematically and logically, and I can find myself back in that. For conscientiousness I can find myself back in my score. It is a medium to high score, implying that I am more into structured working, I am a hard worker, and I prepare strategies to optimize my work. My highest score is on extraversion, a score which I agree with. I like to work alone and not talk to anyone often, but overall, I am an extrovert who likes to work in teams. In agreeableness I score in the exact middle. I would expect this to be around 10% higher, because I am more into collaborating with team members then I am more into my own ideas. Lastly for natural reactions I score very low with only 13%. I agree with this, as the only moment that I am stressed is when I must catch a train, however in school or work environments I will always be very calm, despite of the high pressure. </div><img src="big5.png" alt="Big 5 Personality Traits" style="width:25%;float:right;margin-left:5%;§">  </div>
+            <p><div class="content-container"><div style="width:30%; margin-right:5%; margin-left:5%;"><img src="123test.png" alt="123 Team Test" style="width:80%;float:left;"></div><div class="text-content">
+                <h4>123 Team Role Test</h4>
+                During the second design thinking and co-creation workshop we had to do another personality test and compare the results with our interdisciplinary groups. The nine different sections can be grouped into three main sections: thinker, action, and social. Ideally in one group you would have at least one person of each category. I scored equally high in social and in action. The social person is needed for getting the group together and leading, and an actionable person is necessary for performing the tasks. I scored very low in thinker, which makes sense to me because I am not an inventor. Unfortunately, in our group we had no thinkers at all. All four of us scored high on social, and me and another groupmate also scored equally high on action.            </p></div></div>
+        </section>
+
+        <section id="goals">
+            <table cellspacing="10%" cellpadding="10%" style="width: 100%; border:1px solid white;">
+                <tr>
+                    <td style="vertical-align:top; width: 50%; border:1px solid white; padding: 1.5%;">
+                        <h3>Expert Competency</h3>
+                        <h4>Goal: Improve my data science and IT techniques.<br></h4>
+                        <p style="margin-left: 30px; line-height: 1.8;">
+                            <b>• Specific:</b> Build proficiency in designing and implementing digital tools using programming languages such as Python and HTML and apply these skills to develop a PSSA-based tool for identifying prescribing cascades, while also exploring programming challenges beyond the project.<br>
+                            <b>• Measurable:</b> Complete the digital tool to detect prescribing cascades related to Python and PSSA and develop at least one additional programming skill outside the project’s requirements.<br>
+                            <b>• Achievable:</b> Dedicate 5 hours per week to programming practice and tool development, collaborating with team members and receiving regular feedback to refine skills.<br>
+                            <b>• Relevant:</b> Strengthening my programming and data science capabilities will support my current project while providing a foundation for future digital innovations in healthcare and beyond and will enhance my critical thinking and problem-solving abilities.<br>
+                            <b>• Time-bound:</b> Complete the PSSA tool within the project timeline (periods 2 and 4) and dedicate the remaining time to exploring a broader programming goal by the end of the academic year.<br><br>
+                        My motivation for choosing this specific learning goal originates from my past interest in data and computer science. During high school, one of my favorite courses was computer science, in which we programmed in several applications, including HTML. During university, I stopped programming, and I lost this skill. However, I miss it and am interested in refreshing these skills. In addition to HTML, I also want to learn different programming languages, like Python. This learning goal aligns perfectly with my interdisciplinary project, in which we are creating a digital tool to detect prescribing cascades.<br>
+                        </p>
+                    </td>
+                    <td style="vertical-align:top; width: 50%; border:1px solid white; padding-left: 2%;">
+                        <h3>Investigator Competency</h3>
+             <h4>Goal: Enhance my understanding in reliable rapid summary methods.<br></h4>
+             <p style="margin-left: 30px; line-height: 1.8;">
+                 <b>• Specific:</b> Learn and apply research methods to identify credible reports on prescribing cascades, using academic databases, government publications, and industry reports.<br>
+                 <b>• Measurable:</b> Find and review at least 10 reports, summarizing their quality based on criteria like authorship, credibility, and relevance to my research field. A short summary of messages and quality of the reports will be used as evidence.<br>
+                 <b>• Achievable:</b> Dedicate 3 hours per week to research, using online resources and academic libraries.<br>
+                 <b>• Relevant:</b> Identifying reliable sources is essential for producing well-supported and accurate work in any field.<br>
+                 <b>• Time-bound:</b> Complete the search and assessment of reports within three months.<br><br>
+             This goal is chosen because I noticed I am inefficient in summarizing. In general, it takes me very long to read an article, as I find it difficult to distinguish between important and unimportant information, making summarizing also more time intensive and difficult. I realize that my summaries are often much longer than fellow students’ summaries. Due to that reason, I stopped making my own summaries and “wasting” time, and I used the summaries of fellow students. However, I also realize that this is too easy, I should not avoid my problems, I should work on them. Therefore, I thought it would be a valuable learning goal to work on this. To make this goal more specific, I decided to focus the summaries on prescribing cascades and PSSA, relating to the interdisciplinary project.<br>
+             </p>       
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align:top; width: 50%; border:1px solid white; padding: 1.5%;">
+                        <h3>Communicator Competency</h3>
+            <h4>Goal: Enhance communication skills during individual and group meetings in professional environments.<br></h4>
+            <p style="margin-left: 30px; line-height: 1.8;">
+                <b>• Specific:</b> Prepare questions and talking points for various meetings and discussions, aiming to ask at least one thoughtful question or contribute to the conversation in every group setting.<br>
+                <b>• Measurable:</b> Track my participation by noting key questions asked and feedback received in at least five different interactions with senior staff or team members over the course of my time at Maastro.<br>
+                <b>• Achievable:</b> Set aside 1 hour before each key meeting or event to prepare questions, research topics, and practice communication skills.<br>
+                <b>• Relevant:</b> Developing strong communication skills will help me better understand the work environment, show initiative, and build connections with colleagues and higher-ups, and help me for future jobs and formal interactions.<br>
+                <b>• Time-bound:</b> Continuously improve my communication throughout my experience at Maastro, aiming to feel confident in senior interactions within the end of my first project in two months.<br><br>
+            The reason I chose this learning goal is because I realized I am an easy talker in small groups; however, in larger (unfamiliar) groups, I hesitate to speak up. Especially with the problem-based learning at UM, in more talkative groups, I noticed this problem. I am sometimes afraid to speak up, because I know others will want to talk at the same time. The opposite is when it is quiet in class, and then I would be the first person to speak up. I do not feel comfortable in neither situation, so I decided I need to work on this. As I feel truly pleasant in our classes during this master and I dare to speak up around them, I decided to work on this learning goal at my work. Especially in professional environments, it is so important to speak up and make people hear you. I believe it is extremely important to work on being seen more in professional groups.<br>
+            </p>
+                    </td>
+                    <td style="vertical-align:top; width: 50%; border:1px solid white; padding-left: 2%;">
+                        <h3>Professional Competency</h3>
+                        <h4>Goal: Build a professional network with healthcare professionals.<br></h4>
+                        <p style="margin-left: 30px; line-height: 1.8;">
+                            <b>• Specific:</b> Participate in project days and plan interviews to connect with professionals.<br>
+                            <b>• Measurable:</b> Write a short summary about the people spoken to, including their job, research, studies, what I learned from them.<br>
+                            <b>• Achievable:</b> Spend 1-2 hours per week researching potential connections, drafting professional messages, and preparing questions for each meeting.<br>
+                            <b>• Relevant:</b> Developing a professional network and critical thinking skills is essential for understanding healthcare practices and improving my own career prospects.<br>
+                            <b>• Time-bound:</b> Complete at least 8 professional meetings within four months, presenting myself professionally.<br><br>
+                        The last learning goal originates from my past. I have connected with quite some professionals, as this was always motivated to do so by my previous business school. However, the connections that I have achieved in the past are mostly in accounting, finance, supply chain, etc. As my future goal is to work at a healthcare company, I believe that I need to expand my professional network, including healthcare professionals.<br>
+                        </p>     
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="learning-goals">
+            <h2>Progress</h2>
+            <p>Insert your learning goals here.</p>
+        </section>
+        
+        <section id="logbook">
+            <h2 style="text-align: center;">Logbook</h2>
+             <img src="timeline.png" width="60%" style="display: block; margin: auto;">
+        </section>
+
+        <section id="meetings">
+            <h2>Individual Coach Meetings</h2> 
+            <div class="content-container"><div style="width:30%; margin-right:0%; margin-left:0%;"><img src="01.png" alt="logo" style="width: 100%;"></div> <div class="text-content"><h3>Session 1</h3>
+            <p>In preparation for the first coach meeting, I prepared my SMART learning goals, and I did the Five personality test. During the meeting we mostly discussed my goals. Contrary to my thoughts, I learned that the goals did not necessarily have to connect with the interdisciplinary project. My expert and investigator goals only needed slight changing, however we concluded I would need to change the communicator and professional role a bit more extensive. I wrote down Joost’s feedback and worked on my goals later to change them. My main changes are that I related my new goals to my work at Maastro. After the adaptations I was more satisfied with my learning goals. <br><br>
+            We only talked about the personality test very shortly as time was over.</p> </div></div>
+            <hr>
+            <div class="content-container"><div class="text-content"><h3>Session 2</h3>
+            <p>For the next session we would discuss the progress on my portfolio. The preparation for this session was only sending the portfolio to the coach so he could prepare. I was not too happy with what I delivered, as I hoped to have done a bit more on my second learning goal before this meeting. However, due to personal circumstances this week, I was unable to. The first learning goal will mostly be focused on in the second and fourth period, and the third and fourth goal I had been working on for a while already. Luckily the coach was happy with my progress so far, so it was a positive meeting. He was able to give me a few more tips on how I could tackle the first two learning goals, and he was able to answer some questions I still had regarding the portfolio and the master thesis.</p>
+        </div><div style="width:30%; margin-right:0%; margin-left:0%;"><img src="02.png" alt="Me"></div></div><hr>
+            <div class="content-container"><div style="width:30%; margin-right:0%; margin-left:0%;"><img src="03.png" alt="logo" style="width: 100%;"></div> <div class="text-content"><h3>Session 3</h3>
+            <p>After the first period, we submitted the first part of our portfolios. In the same week, we had a coach meeting to discuss where we are. The preparation for this coach meeting was only finishing the portfolio for period one. The most important aspect that we talked about is that we have to set five concrete deadlines for the upcoming five weeks, to make sure we work on our project every week when my coach is on holiday. I believe that this is a good way to work on our goals and to make sure that we do what we should do. The goals that I set are:<br>
+            <p style="margin-left:60px;">- Week 1: Summarize a PSSA article<br>
+            - Week 2: Participate in Maastricht Business Days<br>
+            - Week 3: Learn to program for the interdisciplinary project<br>
+            - Week 4: Find someone from senior staff to talk with<br>
+            - Week 5: Summarize another relevant article<br></p>
+            Furthermore, I had a question about evidence: how should I prove I talked with a care professional? Because asking for a signature can seem a bit weird. Joost told me an example of evidence could be to include a transcript. As I try to make my professional conversations a bit more relaxed, thus without a computer to write down all that is being said, I am still unsure how I need to handle the evidence for this learning goal.</p></div></div>
+            <hr><div class="content-container"><div class="text-content"><h3>Session 4</h3>
+            <p>Session 4 was an incredibly short coach meeting. The meeting was planned during exam week. We talked about how the last period went, when my coach was on holidays, and how I am doing in general. I am doing well, and I believe working on my portfolio also went well this period. I told my coach about my journey in finding my own internship these past few weeks, and he commented on that. There was not much more to discuss, so we finished the meeting after ten minutes. </p>
+        </div><div style="width:30%; margin-right:0%; margin-left:0%;"><img src="04.png" alt="Me"></div></div>
+    </section>
+        <section id="expert" class="dropdown-section">
+            <h2>Expert - Period 1</h2>
+       <h3>Goal: Improve my data science and IT techniques</h3>
+            <p>In the first period there was limited time planned to improve my data science and IT techniques. However, each Friday we have python classes to learn the base of programming, including a group assignment in which we must analyze a data set and answer our own learning goals. Furthermore, I downloaded GitHub, a program my group member, Pepa, has introduced me to. After downloading it I started to get to know more about it, so in the next period when we must use it, I am familiar with the program. In the second and fourth period I will spend more time on this learning goal.<br></p>
+             <div class="content-container">
+              <div style="width:30%; margin-right: 10%;"> <img src="goodhabitz.png" alt="proof" style="width:80%;float:right;"></div><div class="text-content">
+                <h4>Data literacy</h4>
+                  <p>To strengthen my IT capabilities, I completed a digital course in data literacy through GoodHabitz. While the course was not directly related to prescribing cascades, it provided valuable insights into data science fundamentals. It covered topics such as the benefits of data literacy, data definitions, processing, analysis, and quality assessment, including identifying limitations and biases. It also delved into data visualization and the implications of Big Data in decision-making. The course employed a structured approach, beginning with reading materials, followed by knowledge-testing questions, and concluding with an exam. This course has equipped me with essential skills that will support my interdisciplinary project, particularly as I’ll be working extensively with data. Additionally, the course has provided me with a stronger foundation concerning data science, benefitting my data science and IT techniques. <br></p></div></div>
+            <h4>Portfolio</h4>
+            <p>I spent more time on this learning goal than planned in this period. I decided I wanted to program my portfolio to create a website. This step is not directly related to the explanation of my SMART goal, as the goal was focused on PSSA and python. However the overall goal is to improve my data science and IT techniques, which this portfolio is really helping me to do. I am programming the portfolio in HTML. <br><br></p>
+        <h2>Period 2</h2>
+        <h4>Portfolio</h4>
+        <p>During period 1, I successfully used a webspace as my server to program my portfolio. This webspace offered several benefits, such as the ability to upload documents and pictures directly to the server, enabling seamless work across multiple devices. Previously, I had encountered issues where pictures included in my programming were not recognized when switching devices. Fortunately, this webspace resolved those challenges and functioned without issues during the first period.
+           <br><br> However, as I expanded my portfolio during period 2 with additional content and proof, the webspace's storage capacity became a limitation. It no longer allowed me to upload new pictures, which are critical to showcasing my portfolio effectively. This prompted me to explore alternative options for programming.
+           <br><br>I reached out to a fellow student experienced in programming for recommendations in servers. He kindly offered to help and suggested we would look at it together at school. During our discussion, he recommended switching to Visual Studio as a programming environment, combined with GitHub for version control. While I was familiar with Visual Studio from our interdisciplinary project, I had not used it much. He also provided a helpful explanation about GitHub, emphasizing its value for storing and managing changes.
+           <br><br>Reflecting on this experience, I am glad I looked for advice rather than relying solely on online searches. Transitioning to Visual Studio has been a positive change, offering unlimited storage and a smooth programming experience. Using GitHub has proven to be even more insightful. Recently, I made a mistake while including pictures, which disrupted my site's layout. Without a clear record of changes, it took hours to identify and fix the issue. Going forward, GitHub will be invaluable in preventing such setbacks by allowing me to track and revert changes efficiently. This problem has showed me the importance of using the right tools and seeking for guidance when needed.
+            </p>
+            <h4>Crash course programming December 9th </h4>
+            <p>There was one issue constantly coming back when programming my portfolio, the picture’s and text’s formatting was wrong almost halve of the time. I had already asked a classmate for help, but he did not know what the mistake was. I needed help from someone with programming experience to show me some tricks, and to hopefully help me with the issue. 
+                <div class="content-container">
+                    <div style="width:30%; margin-right: 5%;"> <img src="Hubert.png" alt="proof" style="width:100%;float:right;"></div><div class="text-content"> <br><br>I asked Hubert Bessems, a college at Maastro with programming experience, if he could teach me some tips and tricks, and most importantly, if he knew why my picture formatting was acting strange. I learned a lot from him. First, he looked at my code and, in that instance, he could not find why there were big gaps in between text and pictures. Then he showed me something that changed everything; to press f12. I remember using that in high school, but I totally forgot about it. This button makes you able to analyze websites and to see their code. By holding the cursor on my picture, I could see which parts of code were involved in that certain area. Unfortunately, we could not find the mistake, however, learning about this function can help me a lot in the future. You can look at other websites, and if you like something from there, you just look at the code. Except for that, and most importantly, it makes it easier to analyze my own code when something is not going the way I planned.
+            <br><br>Another helpful trick Hubert taught me is the edit and replace function. As I write most of my text in word, and later copy it to Visual Studio Code, it does not consider line breaks. For every break you want, you must put &lt;br&gt; behind the sentence. It took a lot of time to include this everywhere. He showed me that by pressing CMD+OPT+F, you can change one input in your whole code. For example, to include breaks, I later press CMD+OPT+R, and then change \n to \n&lt;br&gt;. Knowing this will save me so much time, and the code will be less of a mess.</p></div></div>
+            <br><br>Unfortunately, Hubert was not able to help me with the picture issue itself. However, this evening I spend much time on programming, and on using his tricks to change and to analyze my code, and I finally found a method to fix it. I included an extra line of code in every “picture-container”, specifying the width the picture box can have, fixing the mistake.
+            <br><br>I am glad I asked Hubert for help. You can see that even though he did not find the problem, he still gave me knowledge to find the problem myself. I am happy that I asked him to help, and I believe my future code will be better. I will use his tips and tricks a lot during these next weeks.
+          <div class="content-container">
+            <div class="text-content"> <h4>Computational thinking course</h4>
+            <p>With exams in machine learning and AI algorithms coming up, I felt the need to take a course in computer science. I chose the course computational thinking from GoodHabitz, which focusses on problem solving using fundamental concepts from computer science. During our technical course, I realized I lacked background knowledge in certain fields. One example is that I was not able to differentiate between coding and programming, a small difference which I should know in my line of work. 
+            <br><br>The course started with a quiz to test my background knowledge, in which I performed under average. Then the set-up was split into five different categories, ending of with a final exam. Each category taught valuable lessons to think as a computer scientist. The starting quiz was extremely relevant to the exam from next Friday, unfortunately, the following topics were a bit less relevant to what I had hoped. I still learned valuable lessons; however, I would have hoped it was more about programming than it was about problem solving. I liked how the course used a lot of real-life examples, as how we are using computational thinking throughout the whole day, like when baking. Also, at the end of every topic a recap and a sub-quiz was given to test our knowledge before going to the actual exam. 
+        </div><div style="width:30%; margin-right:1%; margin-left:5%;"><img src="ctc.png" alt="CTC" style="width:75%;margin-left:0px;margin-right:10px;float:right;"></div></div> </p>
+       <h4>PSSA</h4> 
+       <p> When receiving our interdisciplinary project and creating our learning goals, I had hoped to take part in the PSSA analysis. As I was one of the two people with programming experience, I also thought I would do part of the analysis. Unfortunately, I was not the only one with the learning goal to learn this. As one of my other learning goals is to connect with healthcare professionals, and the group work forced us to split up into two people doing PSSA, and two the interviews, I was assigned to the interview group. Essentially, I do not mind this, as I have never done interviews before, so I like to learn this. However, for this learning goal I hoped to be in the other group.
+           <br><br>As choices had to be made, I accepted that I must do the qualitative work. However, I still wanted to be involved in what the other group was doing. I asked for updates on their side quite often, and when they were stuck, I tried to help. My help was mostly in giving them formulas they can use for solving the problem we want. Also, I joined every meeting they had with our coach. I am glad that I did, because even though I am not the one who is coding, I still tried to learn a lot about the PSSA. 
+            <br><br>PS. My recent course helped me understand the difference between coding and programming—happy to say I got it right this time! 😉
+        </p>    
+    </section>
+
+        <section id="investigator" class="dropdown-section">
+            <h2>Investigator - Period 1</h2>
+        <h3>Goal: Enhance my understanding in reliable rapid summary methods. </h3>
+            <p>Being able to summarize articles is important for more than just summarizing articles. It also brings you advantages in business and in choosing new tasks effectively.</p>
+        <hr><h4>Article 1</h4>
+        <p><img src="article1.png" alt="article" style="width:40%;margin-left:15px;float:right;">
+            <p>The first article to summarize is called “Adverse events with use of antiepileptic drugs: a prescription and event symmetry analysis”. I chose it to get to know a bit more about prescription and event symmetry analysis.</p>
+            <i>Authorship:</i> The article is authored by Ioannis Tsiropoulos, Morten Andersen, and Jesper Hallas, who are established researchers in neurology and public health, affiliated with the University of Southern Denmark. Their academic background and contributions ensure integrity.<br><p>
+            <i>Credibility:</i> Published in Pharmacoepidemiology and Drug Safety, a peer-reviewed journal known for its diligent studies, the article holds significant credibility. The inclusion of sequence symmetry analysis adds methodical strength.<br><p>
+            <i>Relevance:</i> The article is focusing on adverse drug events, especially in antiepileptic drugs. The article is relevant to my research on prescribing cascades, as it provides both known and unrecognized adverse events that could lead to cascades. Their study methods can help me inform strategies for recognizing prescribing cascades. However, the article was less about prescription sequence symmetry analysis (PSSA) than I thought it would be. Reading the article was not irrelevant, however I could have chosen a better article for my research.<br><p>
+            <i>Summary:</i> The article highlights the value of post-marketing surveillance for identifying uncommon adverse drug effects and displays the goal of sequence symmetry analysis by revealing both known and unknown drug interactions. The article supports the need for reliable methods in drug prescribing research, contributing to our research on identifying prescription cascades.<br><br>
+            <p style="margin-left:30px;">Tsiropoulos, I., Andersen, M., & Hallas, J. (2009). Adverse events with use of antiepileptic drugs: a prescription and event symmetry analysis. Pharmacoepidemiology and Drug Safety, 18(6), 483–491. https://doi.org/10.1002/pds.1736
+             </p>
+             <hr><h4>Article 2</h4>
+        <p><img src="article2.png" alt="article" style="width:40%;margin-left:15px;float:right;">
+            <p>The second article I chose to summarize is called “Evaluating the Use of Prescription Sequence Symmetry Analysis as a Pharmacovigilance Tool: A Scoping Review” written by E. J. Morris, J. Hollmann, A. K. Hofer, H. Bhagwandass, R. Oueini, L. E. Adkins, and S. M. Vouri. I chose this article to deepen my understanding of PSSA, and its application in pharmacovigilance.</p>
+            <i>Authorship:</i> The article is written by a collaborative team of researchers and pharmacovigilance experts from various institutions. The author who led this group is E.J. Morris, who has expertise in PSSA and drug safety. Their combined backgrounds contribute in the significant authorship to the article.<br><p>
+            <i>Credibility:</i> The paper is published in Research in Social and Administrative Pharmacy, a well-regarded peer-reviewed journal known for its focus on pharmacy and healthcare research, providing this article strong credibility. Its comprehensive scoping review provides a reliable synthesis of previous studies on using PSSA as a tool in monitoring adverse drug reactions.<br><p>
+            <i>Relevance:</i> With its in-depth look at PSSA, this article was highly relevant to my interdisciplinary project. By analyzing the utility of PSSA in adverse drug reaction detections, or prescribing cascades, the article offers valuable insight into effective strategies for prescribing cascade prevention. <br><p>
+            <i>Summary:</i> The paper systematically reviews the application of PSSA in pharmacovigilance, evaluating its effectiveness for adverse drug reaction detection and sequence analysis. It is concluded that while PSSA could potentially be a valuable tool for early prescribing cascade detection, further studies are necessary to refine its implementation in reality. The article aligns with my research on the role of PSSA in detecting prescribing cascades, and it made me better understand its use and limitations.<br><br>
+            <p style="margin-left:30px;">Morris, E. J., Hollmann, J., Hofer, A. K., Bhagwandass, H., Oueini, R., Adkins, L. E., ... & Vouri, S. M. (2022). Evaluating the use of prescription sequence symmetry analysis as a pharmacovigilance tool: a scoping review. Research in Social and Administrative Pharmacy, 18(7), 3079-3093.</p>
+              <hr><h3>Period 2</h3>
+              <h4>Article 3</h4>
+        <p><img src="article3.png" alt="article" style="width:40%;margin-left:15px;float:right;">
+            <p>The reason for choosing the article “What Is Known About Preventing, Detecting, and Reversing Prescribing Cascades: A Scoping Review” by Brath et al. is because this period of the interdisciplinary project, we are focusing on detecting prescribing cascades. Therefore, I thought it would be relevant to pick an article that mentions some of the most commonly found cascades yet.</p>
+            <i>Authorship:</i> The article is authored by experts in geriatrics and pharmacology, ensuring a strong foundation in the subject matter. The main author is Dee Mangin, an authority in geriatric medicine and pharmacovigilance.<br><p>
+            <i>Credibility:</i> The Journal of the American Geriatrics Society, where the article has been published, is a leading peer-reviewed journal in geriatrics, the study is highly credible, reflecting rigorous standards and impactful research.<br><p>
+            <i>Relevance:</i> The article focusses on prescribing cascades, and their prevention in older adults. This is directly related to my interdisciplinary project, offering insights into both the risks and interventions in healthcare practices. As this period is focusing on actually detecting prescribing cascades, this article is highly relevant for me.<br><p>
+            <i>Summary:</i> Multiple prescribing cascades are discussed in this article. They mention that this phenomenon is a significant contributor to polypharmacy in older adults, exacerbating their vulnerability to drug-related harm. The authors emphasize the need for clinicians to recognize the signs of prescribing cascades and propose systematic strategies to prevent them. Examples are enhanced monitoring, patient education, and interdisciplinary approaches. The study underscores the critical role of prescribing in improving medication safety and reducing unnecessary polypharmacy. By identifying gaps in clinical awareness and offering practical solutions, valuable insights for mitigating risks associated with complex medication regimens, aligning closely with efforts to address prescribing cascades in healthcare. <br><br>
+            <p>What I like about this article is that it emphasizes how to detect a prescribing cascade, and it includes some statistical tests to make it even more credible. However, when picking this article, I had hoped to find a list or short summary with examples of some common prescribing cascades.</p>
+            <p style="margin-left:30px;">Brath H, Mehta N, Savage RD, Gill SS, Wu W, Bronskill SE, Zhu L, Gurwitz JH, Rochon PA. What Is Known About Preventing, Detecting, and Reversing Prescribing Cascades: A Scoping Review. J Am Geriatr Soc. 2018 Nov;66(11):2079-2085. doi: 10.1111/jgs.15543. Epub 2018 Oct 18. PMID: 30335185.</p>
+        </p>
+        <h4>Reflection</h4>
+        <p>By summarizing these articles, I have realized there is room for improvement in selecting relevant sources. Of the three articles that I have reviewed, two fell short of my expectations in relevance, or lack the lists or summaries of prescribing cascade examples that I was specifically hoping to find. This has highlighted the importance of thoroughly assessing an article’s alignment with my research objectives before investing time in analysis. I plan to refine my selection criteria, focusing more on abstracts, keywords, and the specific methodologies described, before starting to summarize the article. This reflection serves as a valuable lesson for optimizing my approach and ensuring future efforts yield more meaningful insights, being more relevant to my project. </p>
+        <hr><h4>Article 4</h4>
+        <p><img src="article4.png" alt="article" style="width:40%;margin-left:15px;float:right;">
+            <p>This week is the first week that we are planning on performing PSSA. Therefore, I tried to find an article that has a step-by-step guide on how to do PSSA. As a group, we all found, apart from each other, the same article. I will take this as a sign that we all picked a good one.</p>
+            <i>Authorship:</i> Ioannis Tsiropoulos, Morten Andersen, and Jesper Hallas are the authors of this article. Being professionals with expertise in clinical pharmacology, epidemiology, and drug safety, their extensive backgrounds make their research credible and reliable for analyzing prescribing cascades through novel methods like PSSA.<br><p>
+            <i>Credibility:</i> Published in BMC Medical Research Methodology, the article adheres to rigorous peer-reviewed standards, ensuring the validity of the proposed method. The journal’s focus on methodological innovations in medical research further enhances the paper’s credibility within the field of pharmacovigilance.<br><p>
+            <i>Relevance:</i> This article is highly relevant to my project, as it gives us a step-by-step guide on how to use PSSA to detect prescribing cascades. Understanding the methodology for identifying these cascades helps enhance strategies for medication safety. Especially with doing the PSSA this period, we will be using this article a lot.<br><p>
+            <i>Summary:</i> The study introduces the analytical tool PSSA to detect prescribing cascades and adverse drug reactions. By analyzing prescription data, the authors identify known and new associations between medications and adverse effects, offering valuable insights for clinicians and researchers. The article demonstrates PSSA’s potential to identify previously unrecognized cascading effects in drug prescriptions, supporting improved pharmacovigilance practices. It provides evidence for the effectiveness of PSSA in systematically monitoring adverse drug events, offering a comprehensive methodology for future research and practical applications in preventing prescribing cascades. Additionally, the article provides a step-by-step guideline on how to use PSSA.<br><br>
+            <p style="margin-left:30px;">Hendrix, M. R. S., Yasar, M., Mohammad, A. K., Hugtenburg, J. G., Vanhommerig, J. W., Gündoğan-Yilmaz, R., Van Den Bemt, P. M. L. A., Denig, P., & Karapinar-Carkıt, F. (2024). Prescription Sequence Symmetry Analysis (PSSA) to assess prescribing cascades: a step-by-step guide. BMC Medical Research Methodology, 24(1). https://doi.org/10.1186/s12874-023-02108-y</p>
+</p><hr><h4>Article 5</h4>
+        <p><img src="article5.png" alt="article" style="width:40%;margin-left:15px;float:right;">
+            <p>The goal when looking for the previous article about prescribing cascades (article 3) was to find a list of examples. Even though the article was highly relevant, it did not mention cascades that have been discovered. Therefore, I am still looking for articles bringing me more knowledge about the more common prescribing cascades. It looks like the article “Prescribing Cascades with Recommendations to Prevent or Reverse Them: A Systematic Review” by Oriane Adrien et al. will provide me with that.</p>
+            <i>Authorship:</i> The article is written by Oriane Adrien and eleven of her colleagues, all experts in pharmacology, drug safety, and geriatrics, bringing significant credibility to the findings.<br><p>
+            <i>Credibility:</i> This systematic review has been published in Drugs & Aging, a reputable, peer-reviewed journal specializing in medication management in aging populations. The thorough methodology used in the study ensures high credibility, with the authors applying rigorous search strategies and adherence to PRISMA guidelines.<br><p>
+            <i>Relevance:</i> The article is highly relevant to our research on prescribing cascades. It focuses on identifying and understanding prescribing cascades that occur due to adverse drug reactions. It offers recommendations for preventing or reversing these cascades, which is crucial for our work. In detecting prescribing cascades, they use, among others, PSSA.<br><p>
+            <i>Summary:</i> 115 prescribing cascades are systematically reviewed in this article, confirming adverse drug reactions associated with these cascades. For 52 cascades, dose-dependency information and preventive strategies are given. Examples are dosage adjustments, medication discontinuation, and switching to alternative treatments. One example of an alternative treatment is switching to ondansetron for extrapyramidal syndrome caused by metoclopramide. Next to giving actionable recommendations for healthcare providers, it also notes the scarcity of detailed alternatives for managing these cascades.<br><p>
+            By reading and summarizing this article, I found what I have been looking for. The goal was to find an article that would give me examples on prescribing cascades, which I was not able to find before. The article also gave me an idea of extensions of our digital tool for the interdisciplinary project. At first, we are only giving the pharmacists a warning that a prescribing cascade has been detected, however we are not giving recommendations as to how they should handle the situation. With all the recommendations given in this article, I think it would add a lot of value in our tool to do so as well. However, this is surely not reachable within our time.<br><br>
+            <p style="margin-left:30px;">Adrien, O., Mohammad, A. K., Hugtenburg, J. G., McCarthy, L. M., Priester-Vink, S., Visscher, R., Van Den Bemt, P. M. L. A., Denig, P., & Karapinar-Carkıt, F. (2023). Prescribing cascades with recommendations to prevent or reverse them: A systematic review. Drugs & Aging, 40(12), 1085–1100. https://doi.org/10.1007/s40266-023-01072-y</p>
+            </p>
+            <hr><h4>Article 6</h4>
+            <img src="article6.png" alt="article" style="width:40%;margin-left:15px;float:right;">
+            The next report to summarize is Chapter 20 from the book Clinical Epidemiology, which focuses on qualitative research methods in epidemiology. This will provide insights into conducting scientific interviews, a skill we will need for our interdisciplinary project. As we prepare for the next project meeting, where an expert will help guide our interview preparations, this chapter will help me understand qualitative research principles, particularly useful for detecting prescribing cascades and analyzing complex clinical issues in our study.
+            <br><br><i>Authorship:</i> Chapter 20 is authored by Stephanie Thompson and Kara Schick-Makaroff, leading experts in clinical epidemiology, using a deep focus on integrating qualitative research methods into clinical settings. Their experience in the field lends authority to the content.
+            <br><br><i>Credibility:</i> Being one of the chapters in the book Clinical Epidemiology: Practice and Methods, a reputable textbook in the field, the chapter is supported by solid research and is being peer-reviewed, making it a trustworthy source for understanding qualitative approaches in clinical epidemiology.
+            <br><br><i>Relevance:</i> The reason I chose this chapter right now, is because it is highly relevant to my interdisciplinary project, as it explores qualitative research methodologies that can help uncover deeper insights into prescribing cascades. Understanding pharmacist’s decisions through qualitative methods is essential for addressing this complex issue in healthcare. After doing our first interview in our way, we talked with Lina, who is going to help us prepare scientific interviews, and she seemed not happy with the way we did it. As we had not done interviews before, we thought it would be good to ask questions, and summarize the answers. However, Lina told us that you cannot use their input when you do not have it literally transcribed. It was clear that we need her help, and that we need to dig more into this topic. Therefore, the chapter was highly relevant for me right now. 
+            <br><br><i>Summary:</i> The chapter explains the role qualitative research has on understanding the complex aspects of health, illness, and health care delivery. The authors have outlined several common approaches to addressing questions relating to experience and/or process that require qualitative inquiry. As with all types of research, clarity and specificity of the research question will inform the appropriate approach and facilitate good quality research. In qualitative research this includes establishing the methodology and consequently, the method (data collection tools). To frame the research question, it is highly important to ask questions like What?, Why?, and Who?, directing the researcher into the right direction. Lastly, all types of research require assumptions and judgement on the part of the researcher. The key to ensuring rigor in qualitative research is to ensure that those assumptions are consistent with the methodological approach and that they are made explicit. The chapter also underlines the importance of combining qualitative data with quantitative findings to enhance the depth of clinical research.
+            <br><br>This was the first chapter I summarized from a book for my portfolio, and I found it highly relevant to our current work. The chapter was about 20 pages, packed with detailed information. However, I struggled with information overload and realized I was forgetting key points as I read. Unlike shorter articles, this one demanded more focus. What I liked is the summary that they gave, and some tables for visualization that helped me get through the chapter.  I reflected on my reading habits and realized that there is room for improvement; choosing an informative chapter when my focus is stronger would help. I also recognize that my concentration today was not ideal, which made the process more challenging.
+            <br><br><p style="margin-left:30px;">Thompson, S., & Schick-Makaroff, K. (2021). Qualitative Research in Clinical Epidemiology. In Clinical epidemiology - Methods in molecular biology (3rd ed.). Humana Press. https://doi.org/10.1007/978-1-0716-1138-8</p>
+            <hr><h4>Article 7</h4> 
+           <img src="article7.png" alt="article" style="width:40%;margin-left:15px;float:right;">
+           Given the focus on scientific interviews of my interdisciplinary projects, learning more about qualitative methods and understanding their complexities in healthcare innovation is essential. This article stood out because it offers a comprehensive introduction to qualitative methods, helpful for a beginner in this area like me. The insights of this article are critical when introducing innovations like tools for detecting prescribing cascades. Our interviews, using this article’s guidance, will help bridge the gap between theoretical innovation and practical adoption within healthcare systems.
+            <br><br><i>Authorship:</i> The article has been written by Alison B. Hamilton and Erin P. Finley, both of whom are well regarded in the fields of implementation science and healthcare innovation. Their work ensures that the article is grounded in practical experience and academic rigor, making it a valuable article for people working in healthcare and research.
+            <br><br><i>Credibility:</i> Credibility is demonstrated by offering a detailed exploration of qualitative methods, a crucial aspect of implementation science. The article provides specific frameworks and examples for conducting high-quality research, underscoring its methodological rigor. The authors emphasize maintaining transparency and methodological rigor, such as purposeful sampling, thematic coding, and peer reviews, which are foundational practices in high quality qualitative research.
+            <br><br><i>Relevance: </i>The focus of this article aligns well with the objectives of my interdisciplinary project from this period. As my interview coach told us, understanding the “how” and “why” behind adoption often influences the implementation’s challenges or successes, as mentioned in this article as well. The methods outlined in this article are directly applicable to evaluating the adoption of our digital tool. Specifically, interviews and focus groups could explore pharmacist’s perspective on medication management. By emphasizing qualitative approaches, the article provides strategies for addressing common barriers to adoption, such as resistance from healthcare providers, lack of training, or patient misconceptions. These insights are essential when proposing solutions for systemic issues like prescribing cascades, ensuring that interventions are not only evidence-based but also practical and adaptable.
+            <br><br><i>Summary: </i>The article highlights the importance of qualitative methods in implementation research, focusing on their ability to answer complex questions about why and how healthcare interventions could succeed or fail. Key methods, such as interviews, focus groups, and case studies are outlined. The case studies capture diverse perspectives from patients and providers. Sampling strategies, suck as purposeful samppling, are discussed to ensure data relevance and depth.  
+            <br><br>To ensure research rigor, practices as thematic coding, transparency in analysis, and triangulation are emphasized. A case study exploring a care model for women veterans with mental health conditions demonstrates the real-world application of these methods, showing how they can reveal barriers, assess system readiness, and inform strategies implying change. Overall, the article underscores qualitative research’s critical role in tailoring and scaling healthcare innovations effectively.
+            <br><br>I appreciated the article’s clear and structures approach, making it accessible to new interviewers. The practical examples, especially the case study, provided real-world context that made methods feel applicable and actionable. The focus on ensuring rigor through best practices, such as purposeful sampling and transparent analysis, was particularly helpful. However, I would have liked to see a bit more about the coding of an interview, as I am still confused about that.
+            <br><br><p style="margin-left:30px;">Hamilton, A. B., & Finley, E. P. (2019). Qualitative methods in implementation research: An introduction. Psychiatry Research, 280, 112516. https://doi.org/10.1016/j.psychres.2019.112516 </p>
+        </section>
+        <section id="communicator" class="dropdown-section">
+            <h2>Communicator Learning Goals - Period 1</h2>
+            <h3>Goal: Enhance communication skills during individual and group meetings at Maastro</h3>
+            <div class="content-container">
+                <div style="width:30%; margin-right: 10%;"> <img src="max.png" alt="logo" style="width: 100%; margin-right: 20px; float: left display: block;"></div><div class="text-content">
+                    <h4>Introduction Max Wellens – Care Manager on October 7th</h4>
+            <p>This will be an informal meeting between me and the care manager. I have planned it to learn more about Maastro, his job, and to improve my communication skills with professionals. As he is one of the highest within the company, I feel like he would be a good person to learn how to communicate with professionals. As this will be without my laptop or any other notes, it will not be a Q&A format where I will ask him questions and I write down his answers. However, I will prepare by reading into him, asking some questions to coworkers about what he is like and what his job is, to be prepared in my meeting with him. The questions I would like to ask Max include why he is working in the healthcare sector, how he chose to join Maastro, what he thinks can be improved, and what I can do for him.<br><br>
+                After my meeting I was satisfied, we talked to get to know each other and it went well. We talked about him joining Maastro only halve a year ago after working at Zuyderland for most of his life. The reason he switched to Maastro is because he has seven specialisms at the hospital, and he started his career in radiology. To finish his career, he wanted to take it back to the beginning and work at a radiology center again. He finds solutions before thinking of a problem. He mentioned one aspect about digitalization he wants to focus more on, which might be interesting for me. He gave me some information about it and it sounded very interesting. Now I am mostly working with people within the company, however this project includes working with patients and how their experiences at Maastro could be improved. I was very glad we had this meeting, both because now I got to know someone who is one of the highest within the company, but also because he now knows about me working here, and if he needs a student for digitalization, he now knows he can reach out to me. I think this first step into enhancing my communication skills will help me get new assignments later.<br><br></div></div>
+                <h4>Introduction Jolanda Laar – Advisor of Care Manager on October 7th</h4>
+                 On the same day I met with care manager Max Wellens, I also scheduled a meeting with his advisor, Jolanda Laar. To prepare, I researched her background using Maastro's SharePoint, LinkedIn, and conversations with colleagues. I was told she has a strong personality but is passionate about digitalizing Maastro. During our meeting, she asked me to introduce myself, then she introduced herself, and then she spoke extensively—over an hour—about issues within the organization and areas needing improvement.  While I usually talk considerably easy in one-on-one meetings, it was challenging to interject in this meeting. However, I realized many of her concerns aligned with my planned work. I anticipate working closely with her in the future. 
+                <div class="content-container"> <div class="text-content">
+                        <h4>Introduction Martine Lipsch – CIO of Maastro on October 10th </h4>
+                Before my meeting I did some research to who Martine Lipsch, the CIO of Maastro, is, and her career and study history. On LinkedIn I found that she had only been working at Maastro for two years, and before that she mostly worked at MUMC+. I also talked about her a little bit with some coworkers to be prepared for our one-on-one meeting. 
+            <br><br>The meeting was very pleasant. Martine was a friendly woman who first asked some questions about me and what my reason is for joining the company. She asked to explain something more about myself, non-work related and listened very interested. After I introduced myself, she told me her whole story from studying until now. She is writing her PhD in Tilburg next to her job as a CIO, she also told me about her children and other private topics. I was happy with how I participated in this meeting. After thinking about it I realized that my communication in one-on-one meetings is fine, however I am still lacking in group meetings. </div><div style="width:30%; margin-right:5%; margin-left:5%;"><img src="martine.png" alt="Me" style="width:100%;float:right;"></div></div>
+            <br><h4>Breaks</h4>
+            Even though this is not in a formal environment, I have noticed that I am quite during the breaks. Most of my coworkers are talking about their children, in which I find it hard to participate. I realised that I need to interact a bit more during informal moments, to have better connections in my career as well. When people ask me something, I can answer the question quite well, but I have difficulty starting a conversation when it is still quite. I realise that this is common during your first weeks at a new job, but I still feel like I need to improve on this. During the weeks I am making more progress in asking questions about for example their family situations and where they live, to fill my break time.<br><br>
+            <div class="content-container">
+                <div style="width:30%; margin-right:5%; margin-left:5%;"><img src="pubquiz.jpg" alt="logo" style="width: 70%; float: left"></div> <div class="text-content">            <h4>PubQuiz on October 14th </h4>
+            To connect better with the people around me at work, I decided to join the pubquiz. My boss asked me to join, and even though at first the day and group was not to appealing, I decided to do it, as it would improve my bond with them. I thought it would be a good opportunity to talk with them while enjoying pizza and drinks. In the beginning it was a bit awkard, however I participated well during the pub quiz. We finished third and it was a lot of fun. I noticed it paid of to join, as the Thursday after the pubquiz, when I went to work, we had something to talk about. I felt more included in the conversations now. </div></div>
+            </p>
+            <h2>Period 2</h2>
+            <div class="content-container"> <div class="text-content"><h4>Workshop AlphaSights November 13th</h4>
+            More information about this workshop and the Maastricht Business Days (MBD) can be found in the progress part for the Professional learning goal. In short, the MBDs are a recruitment event in Maastricht organized by the business student association. Among others, I participated in a workshop with AlphaSights. During my workshop, we were with around fifteen to twenty students and three recruiters. One exercise was in couples, in which my communication is usually fine. We had to negotiate on a certain case in which one student was an expert on something, and the other was an associate who tried to “buy” the expert for an hour of its’ knowledge. This exercise was fun, and I was quite confident in what I was doing. Later we listened to the recruiters, we did a Q&A and another group exercise. My goal was to ask at least one thoughtful question during this workshop in the group setting. During the presentation several people were asking questions, so I took the opportunity to do so as well. It was unclear to me whether the company paid the experts or whether the clients did, so my question was related to that. The answer was that the company gets a certain amount of money from a client, and they can use a part of that to pay the expert. So, they are incentivized to negotiate the price down. It seemed as they liked my question, as their answer was quite extensive, and the students were also listening very interested.  </div><div style="width:30%; margin-right:5%; margin-left:5%;"><img src="workshop.png" alt="Me" style="width:80%;float:right;"></div></div>
+            <div class="content-container"> <div style="width:30%; margin-right:5%; margin-left:5%;"><img src="jolanda.png" alt="Me" style="width:100%;float:left;"></div><div class="text-content"> <h4>Meeting Jolanda Laar – November 18th </h4>
+            One and a half months after meeting Jolanda, I find it valuable to reflect on my communication skills with her. During our first meeting, I struggled to contribute as she dominated the conversation, leaving little room for me to speak. In the two meetings that followed, I remained hesitant but noticed gradual improvement. Although I was still apprehensive about interrupting her, I became more assertive each time.
+            <br><br>Today’s meeting marked significant progress. I presented my findings from inventorying all that is being done on paper across Maastro and collaborated with her on the next steps. I think in this meeting, we discussed important matters and made great strides forward. While she continued to lead the conversation, I ensured I voiced my thoughts when relevant. It is clear my confidence has grown, and though the balance is far from equal—something colleagues say is unlikely with her—I am pleased with my improvement. This experience has taught me how to navigate challenging conversations and advocate for my contributions effectively.</div></div>
+            <div class="content-container"> <div class="text-content"><h4>Christmas at work</h4>
+            On December 12th, we had “Sinterkerst” at work. Three people bought gifts for everyone, and then we did a game with a dice, changing who has which gift and the amount of gift every single round. Among others, the game included exercises to take away gifts from others, but also to give gifts to others. In one of my first rounds, I had to give someone an additional gift. I was the first one with this assignment, and at first it felt strange to pick someone. However, throughout the game, the vibes were getting better and better. Certain people were getting picked on, as everyone wanted to take their gifts away as a joke, and others were being given a lot. At a time, I had six gifts for myself, while some others had none. This was fun, because therefore others were picking me to take away gifts. As strange as this sounds, it made me feel more like part of the group. I ended up with a gift that everyone was fighting for, and even the next week, colleagues were still asking me if I have given my gift a beautiful place in my room.
+            <br><br>The next day, we could sign up for a Christmas celebration, organized by the staff association. I decided that I wanted to join, partly to connect better with my colleagues at I&S on personal level, but also to meet new people. We started at café Charlemagne with only around 10 people from I&S, and 110 people from other departments. I talked with my coworkers for a bit, and then I often heard my name. Most people from Maastro have not met me yet, so they were wondering who the new girl at I&S is. Every time that I heard someone ask around me, I turned to them, and I introduced myself. I met a lot of new people that evening, while having fun.
+            <br><br>The Sinterkerst meeting was mostly beneficial to talk easier with my coworkers at I&S. The main bonus of having the Christmas celebration is that more people know me now. I feel like my work at Maastro is still not challenging enough. When meeting new people and explaining what I do, people know they can get in contact with me when needing help, so it will hopefully lead to me getting more work. 
+        </div><div style="width:30%; margin-right:5%; margin-left:5%;"><img src="sinterkerst.jpg" alt="Me" style="width:100%;float:right;"></div></div>
+        <h4>Meeting Frank van Thor</h4>
+        <p>Every three weeks my boss plans a meeting with the two of us to discuss how everything is going, work-related and privately. I usually found these meetings a bit awkward, talking an hour at work about anything we wanted. It took me some time to get used to it, and to talk an hour straight with someone, sitting across from them when I get awkward when someone looks me into my eyes. Today I had one of these meetings again, and for the first time since I started it was not awkward. We talked about the Christmas party from last week, our holiday plans, and about work. He told me that he thinks I am social with my colleagues, and he wanted to confirm if I agree with the fact that I am really part of the team now. I am happy to hear that I made such progress, and that apparently my work in trying to fit in pays off. I am satisfied with my communication with almost everyone in one-on-one meetings now. The only thing I still need to work on is that I get awkward from eye contact. With most of my individual meetings you are looking on a computer, and then I am not bothered by this fact. However, in my meetings without devices this is still a point of work. For next period I will have to focus more on group meetings at work, as there is still some effort necessary there.</p>
+        <h4>Taking the lead in a group meeting December 19th</h4>
+        <p>I had scheduled a meeting with four participants, and I unexpectedly found myself in a leadership role. Originally, I would meet with my coworker Max and two others, in which Max would take the lead to discuss a plan for key users of a project. However, max was sick, and I had to step in to take over the meeting. The other two members suggested postponing the meeting until after Christmas when Max would be back, but I decided to take over the meeting and proceed without him, even though I was not fully aware of his exact plan. 
+        <br><br>At the start of the meeting, I struggled a bit as I had limited knowledge of Max’s approach, but I adapted quickly and guided the conversation towards meaningful outcomes. By the end of the meeting, we had developed a useful plan, and I was able to take away actionable points to show Max when he returns. I will plan a follow up meeting after the Christmas break. 
+        <br><br>I believe this experience was an important step in my development as a communicator, especially in group environments. While I still face challenges with speaking up and leading group meetings at my work, I was able to manage the situation effectively and demonstrated flexibility and leadership. It reinforced the importance of adapting when unexpected situations arise and keeping the meeting productive despite uncertainties.
+        </p>   
+    
+    </section>
+
+        <section id="professional" class="dropdown-section">
+            <h2>Professional Learning Goals - Period 1</h2>
+            <p><h3>Goal: Build a professional network with healthcare professionals</h3>
+            <h4>Project day ChipSoft September 12th </h4>
+            This was my very first day at Maastro. To prepare I emailed with my boss about what the plan was on this day. He sent me an email with the schedule, and he thought it would be very beneficial for me to join this project day in order to meet some professionals. Before the project day I did not know how many people would be there and who would be there. During the day I did not feel like I had the ability to participate and talk much. Only during the break, I talked with my boss, Frank, and two women who have been working at Maastro for a while. I asked some questions about what they have studied, what they are doing for work now, and some more personal questions as well. This project day was an opening for me to meet people from my new job and looking back on it I talked to little with people from ChipSoft.
+            <br><br><h4>Project day ChipSoft October 3rd </h4>
+            On this day I participated in my second project day about the implementation of ChipSoft within Maastro. Details about this meeting are confidential, however I can elaborate on some topics. Today Ab and Sterre from Chipsoft came to Maastro to help us implement their software into our system. As this is a very complex process, we will sit together with a combination of backgrounds within I&S (informatisering & systemen). It is a bit difficult for me to engage in this project day, and I notice there is a lot of improvement for me for my communicator learning goal in group settings to speak up. However, I did try to participate as much as possible and talk with them during the break. 
+            <br><br>With Sterre I started talking about some background in her studies. I found out she had studied in Amsterdam with a bachelor’s in health and Life Sciences, and did her master in Rotterdam in Health Economics, Policy & Law. She has had a lot of small student jobs, but for now she has been working at Chipsoft for almost two years. Her role is Medical Software Consultant, and she travels through the country to help companies implement their software. She also did interesting research about people choosing the optimal deductible in health insurance. What I liked about talking with her is how her career has transformed to where it is now, and to hear her opinion about this.
+            <br><br>The second person I talked to on this day was Ab, he is a Senior Software Consultant at ChipSoft and has been working there since 2017. He had studied applied science in Amsterdam, with a degree in communication management. He had always been interested in internal communication within a company, and how this could improve the speed to change in a current organization. With ChipSoft he is mostly focusing on external communication, however, he is still working on changes within an organization and how this can be done as smoothly as possible. During the project day we had little time to discuss informal topics, as the agenda was packed. I was still glad I got a few minutes to talk to him where I learned more about his job and how he likes it. I think it is good to talk to people from different roles to get to know more about the career market.
+            <br><br><h4>Project day ChipSoft October 24th </h4>
+            The last of three project days was on October 24th. It was the last of the three project days I would participate in with ChipSoft. The plan was that I could get to know new people from ChipSoft on this day, however as someone on their end had a concussion, the same team as last session came. Even though they were really nice and professional people, it disappointed me for my learning goal, as I could not meet new healthcare professionals in the way I planned to. However, I did my best to talk with them again and I tried to go a bit more into depth this time. Even though they were not new people, I am happy with the way I talked to them personally. 
+            <br><hr><h2>Period 2</h2>
+            <div class="content-container"><div class="text-content"><h4>Maastricht Business Days November 13th</h4>
+            <p>The Maastricht Business Days (MBD) are Maastricht’s biggest recruitment event, organized by Scope biannually. Scope is the study association of my previous faculty, School of Business and Economics. Every edition, the event provides a steppingstone to over 600 students, by bringing them in contact with around 50 renowned companies from a variety of industries. You can sign up for student chats, workshops, presentations, and recruitment dinners, and the companies choose whether they invite you or not. Previous editions we to orientate for me, to get to know other companies, but I was not looking for something. However, this year I had one goal: to connect with employees from Medtronic. </p>
+        </div><div style="width:30%; margin-right:5%; margin-left:5%;"><img src="MBD.png" alt="Me" style="width:100%;float:right;"></div></div>
+            <div class="content-container">
+                <div style="width:30%; margin-right:5%; margin-left:5%;"><img src="medtronic.png"  style="width: 100%;"></div> <div class="text-content">  <h5>Medtronic</h5>
+            The day started with a student chat with Medtronic. My goal there was to make a good impression to either get myself an internship, or to already get contacts for when I want to work there later. The chat was with one person from HR, and one person working in finance. First, they introduced each other, then I introduced myself and then we talked about my goal at Medtronic. I told them I am interested in doing my master thesis there, and mentioned they were very interested in my profile. They will send my request to coworkers who are working in my field, and they gave me their contact details for when it would take too long. I hope they will not take too long, as the deadline for applying for thesis internships is approaching now. At least I got to connect with them, and if the internship would be arranged too late, I can still use them for applying for a job in a few months. I only connected with two new healthcare professionals, as I already knew the other employees from two years ago when I was their company buddy at the MBDs.</div></div>
+            <div class="content-container"><div class="text-content"><h5>Workshop AlphaSights</h5> 
+            At first, I was not particularly interested in AlphaSights, I was not familiar with the company before, so I did some research. Then I attended their workshop, and it surprised me how interesting the company actually is. It would be a great company to get some experience, however, I am missing the healthcare part. During the workshop we did exercises to test and improve our negotiation skills, as that is the biggest skill you need at this company. Their goal is to find experts who can share knowledge on topics that their client needs, where negotiating comes in handy. Unfortunately, the company is not really related to healthcare or digital transformation, however, you can specify and only work with the clients related to healthcare if you would want to. 
+            <h5>Recruitment Dinner AlphaSights</h5>
+            Later this evening I had a recruitment dinner with the same company, in which the same three people from the workshop were there, but also another recruiter. I already found out during the day that their internships are for at least six months, and if you want to work there you would have to move to Hamburg, London, or even outside of Europe. Therefore, during the dinner I was not aiming for something. However, it was nice to clear up some questions, for example I asked how it would go if you wanted to just take healthcare cases, and an employee told me that healthcare is the only sector in which you can specialize. I was happy to hear that if I would consider this company, I would still be able to use my MSc knowledge. I got to meet four (healthcare) professionals from AlphaSights and connected with them on LinkedIn. 
+        </div><div style="width:30%; margin-right:0%; margin-left:10%;"><img src="alphasights.png" alt="Me" style="width:100%;float:right;"></div></div>
+            </p>
+            <hr><h4>Interview Kjell van der Walle November 20th </h4>
+            Together with one of my groupmates, I conducted an insightful interview with Kjell van der Walle, a pharmacist who has been working for one year, and is currently involved in research on prescribing cascades himself. He studies pharmacy in Leuven and started researching prescribing cascades in March. Kjell’s plan is to study for hospital pharmacist next year. His involvement in this research was influenced by the work of the research chair, who has been investigating cascades for years.
+            <br><br>Kjell told us that prescribing cascades are not widely recognized in practice, despite their potentially severe consequences. This phenomenon has only gained attention since the 90s, and many prescribers are unaware of it. Kjell emphasized the lack of awareness among healthcare professionals about prescribing cascades, and how important it is to make them aware through tools like the one we are developing.
+            <br><br>He also shared valuable insights into the challenges faced by pharmacists, particularly the difficulty of identifying and preventing cascades during medication handouts, as pharmacists often lack information about the patient’s underlying condition or the reasons behind the prescribed medications. Kjell is very enthusiast about using a data-driven system that could help identify prescribing cascades and support pharmacists in medication reviews.
+            <div class="content-container">
+                <div style="width:30%; margin-right:5%; margin-left:5%;"><img src="kjell.png"  style="width: 100%;"></div> <div class="text-content">          <br><br>He also shared his thoughts on how the proposed tool could be integrated into the pharmacy workflow. He highlighted the importance of clear, actionable signals, such as warning about a potential cascade, that could be easily integrated into existing processes, without overwhelming pharmacists with unnecessary notifications. Kjell is eager to test our prototype, and he believes it could significantly help in preventing prescribing cascades in the future.
+            <br><br>The interview provided me with a deeper understanding of how big the issue of prescribing cascades is, and the practical challenges that pharmacists face. He helped us get a better and clearer view of how our prototype should look like, and how he thinks pharmacists would or would not use it. I believe that by doing this interview we created a connection to a healthcare professional who might be helpful for us in the future.</div></div>
+            <hr><div class="content-container"><div class="text-content"><h4>Call with Nicolas Wery and Tim van Kemenade November 22nd - 25th </h4>
+            Due to my interest in Medtronic, I decided to connect with a healthcare professional there. Last week, I discovered an intriguing department called Integrated Health Solutions (IHS) at Medtronic. IHS focuses on collaborating with healthcare providers to enhance operational efficiency, improve patient outcomes, and deliver value-based healthcare solutions. They aim to address challenges such as workflow optimization, hospital efficiency, and tailored health services through innovative and integrated approaches.
+            <br><br>To explore this further, I reached out to Nicolas Wery, a professional within the IHS department, and we arranged a call. While Nicolas was very approachable and helpful during our conversation, he mentioned that he could not directly assist me with securing an internship. Nonetheless, he kindly provided me with the contact information of his colleague, Tim Kemenade, who might be able to guide me further. I appreciated Nicolas taking the time to help, even during the late afternoon, and I decided to wait until after the weekend to call Tim to respect his work-life balance.
+            <br><br>Before speaking with Tim, I prepared by researching more about IHS and reviewing his career background. Although my primary goal was to discuss potential internships, I also saw this as an opportunity to expand my professional network within Medtronic.
+            <br><br>The call with Tim was straightforward and productive. Nicolas had already informed him about my interest, so Tim was prepared for the conversation. While he explained that their department only accepts interns for periods of six months or longer due to the significant time and effort required, he also provided valuable insights into the work of IHS. The department focuses on long-term partnerships with hospitals and healthcare providers, aiming to drive efficiency and improve care delivery through strategic planning and tailored solutions. 
+            <br><br>Connecting with Nicolas and Tim gave me a deeper understanding of IHS’s mission and challenges. I learned that departments like IHS value long-term commitments, which has helped me better understand what organizations expect from interns. While I did not secure an internship opportunity, these conversations were still valuable for networking and gaining insight into how innovative healthcare solutions are implemented at a corporate level. It also reinforced the importance of being well-prepared and respectful when reaching out to professionals. This experience has motivated me to continue building connections and exploring opportunities in healthcare innovation.
+        </div><div style="width:30%; margin-right:5%; margin-left:5%;"><img src="Nicolas.png" alt="Me" style="width:100%;float:right;"></div></div>
+        <hr><div class="content-container">
+            <div style="width:30%; margin-right:5%; margin-left:5%;"><img src="CA.png"  style="width: 100%;"></div> <div class="text-content">  <h4>Call ConsultAssistent</h4> 
+            <p>In pursuit of wanting to find my own internship, I had a call with three professionals from ConsultAssistent (CA) to create e meaningful internship and thesis project. To prepare for this call I emailed with Bert Mooij, the CEO of CA, had a short call with just him to discuss what the guidelines are, and I researched CA. During our conversation, we discussed my qualities, skills, and potential areas of interest for my thesis research. The call allowed me to explore various internship opportunities and research questions aligned with my background in HDT. Although I am considering Medtronic as a potential placement, I believe it is also important to explore other avenues, including the expertise and opportunities offered by CA. Medtronic and CA are two far different companies, one being a large worldwide MedTech, and the other a small consulting firm, both of which could teach me important experience. Niels, who was also part of the meeting, could be a potential supervisor, and he told me the internship would be quite technical, with doing a lot of Python. The conversation helped me broaden my perspectives and refine my approach to securing an internship that aligns with my career goals and academic interests.
+            <br><br>During a recent conversation, my boss, Frank van Thor, mentioned that Bert Mooij and he occasionally cross paths between CA and Maastro. Frank shared that Bert was very enthusiastic about how I handled our conversation and expressed hope that I would take the internship at CA. This feedback affirmed my confidence in exploring different internship opportunities and further refined my approach to finding the right fit.
+            <br><br>Whether I would take the internship at CA or not, it still allowed me to meet new healthcare professionals and to connect with them for potential future reasons.</p></div></div>
+            <hr><div class="content-container"><div class="text-content"><h4>Meeting Stijn Schretlen</h4>
+           <p>As part of my ongoing search for an internship, I had a coffee meeting with Stijn Schretlen, whom I got connected with by Lisanne Abrahamse, the recruiter who had previously assisted me with my Medtronic application after the MBDs. Initially, Stijn was hesitant to take the conversation due to a hiring freeze at his department, but Lisanne convinced him after I made a positive impression during the MBD. To prepare for this meeting, I conducted additional research on HIS, building upon the insights I had gathered in preparation for previous conversations with Tim and Nicolas.
+            <br><br>During our meeting, I first introduced myself, shared details about my master’s program, and told Stijn the requirements of our thesis internship. Subsequently, Stijn introduced himself, explaining his role within Medtronic’s Integrated Health Solutions (IHS) and his involvement in a startup. We discussed potential interesting research topics, both at Medtronic and the startup. Stijn encouraged me to take an internship at the startup, as there is still a lot of research to be done, he sees opportunities for a research thesis. However, after giving it some thought, I realized that it might not be the best fit for me due to concerns about lack of supervision, and little interaction with colleagues who can teach me things.
+            <br><br>Ultimately, as Stijn had anticipated, the hiring freeze prevented him from offering an internship, and a few days later, he confirmed that he could not take any interns this financial year. I am really sad to hear this, as Stijn sounded like a great supervisor, and we got to an interesting topic. Even if this will not lead to anything, I am still glad we had coffee together. Stijn told me that he had great trust in me, and what really complimented me is when he said he would not be embarrassed to take me to clients, as he thinks I will be confident in the job, contrary to some people working for him. If the internship at Medtronic will not work out, I can always try to get in contact with Stijn again after finishing my Master, when a new financial year has started. He seems like a valuable connection to have.</p> 
+        </div><div style="width:30%; margin-right:5%; margin-left:5%;"><img src="stijn.png" alt="Me" style="width:100%;float:right;"></div></div>
+        <hr> <div class="content-container">
+            <div style="width:30%; margin-right:5%; margin-left:5%;"><img src="Gijs.png"  style="width: 100%;"></div><div class="text-content">  <h4>Gijs van der Hamsvoort January 6th</h4>
+            While trying to find an internship at Medtronic, I have come into contact with Gijs van der Hamsvoort. I had a call with him a few weeks ago, and he told me he would try to create an internship topic related to my Master. In the meantime, we have texted a few times about the progress. The last time I texted him was during the last week of Christmas break, in which I expected him to have holidays as well. He did not respond until the Monday after the break. I had given up hope in getting an internship at Medtronic, so I emailed Bert from ConsultAssistent to plan a call to discuss future progress with the internship there, as tomorrow is the first day at school we will start preparing for our thesis. 
+            <br><br>However, this morning Gijs responded to me that he has created an internship topic, and that he is waiting on the last confirmations before he would send it to me. I asked him if he had time to call, so that I could explain I would have to know the topic today, otherwise I would have to take my plan B at the other company.
+            <br><br>Thus, Gijs called me, he told me about the topic, and when I mentioned I really liked the topic, he gave me some more information regarding the internship rules. I am really enthusiastic about the topic, and I am delighted it finally worked out. I gave up hope, but connecting with a professional as Gijs eventually led to me getting an internship at my dream company.</div></div>
+            <hr><h4>Future interviews</h4>
+            As mentioned before, by consulting with our external coach, we made the decision to perform our interviews scientifically. This period, Bridget and I, have spent a lot of time learning how to conduct such interviews. Next period, I can work on my professional competency by conducting these interviews. We have created an <a href="ig.pdf" target="_blank" rel="noopener noreferrer">interview guide</a> to help us get through the interviews in an organized way.  Furthermore, for the people that we will not interview in person, we have created a Qualtrics, so we can still use their input for our project. <a href="https://qualtricsxmtt5b73qft.qualtrics.com/jfe/form/SV_aXaEbZH1ASByUiW " target="_blank">See the Qualtrics</a>
+        </section>
+  
+         <section id="reflection">
+            <h1> Reflection - Period 1</h1>
+            <p>To reflect on period one, I will look back on the progress I made in my SMART learning goals. For each step taken in the learning goals, a reflection has been given in the “Progress” part. The reflection in this part is a general reflection. 
+                <table cellspacing="10%" cellpadding="10%" style="width: 100%; border:1px solid white;">
+                    <tr>
+                        <td style="vertical-align:top; width: 50%; border:1px solid white; padding: 1.5%;">
+                            <h4>Expert Competency: Enhancing Data Science and IT Skills</h4>
+                            For the expert competency, the goal is to enhance my data science and IT skills. Initially, my plan was to focus on this competency in the following periods. However, I found myself developing these skills earlier, partly through creating this portfolio. This unplanned progress helped me learn foundational python, refresh my HTML skills, and expand my knowledge in data science theory. The journey felt rewarding, as I could see direct results in my progress. Looking back on this period, I realize that my curiosity and enthusiasm for data science motivated me to exceed my original plan. In the next period, I intend to apply these skills on the interdisciplinary project among others, which will provide additional opportunities for growth and practice.             
+                        </td>
+                        <td style="vertical-align:top; width: 50%; border:1px solid white; padding-left: 2%;">
+                            <h4>Investigator Competency: Summarizing Articles on PSSA</h4>
+                             The initial goal for this period was to summarize three articles related to PSSA, but I completed only two. I realize I underestimated the time required for thorough summaries, given the level of analysis needed to capture the depth of each article. Although I did not reach my target, the experience taught me the importance of setting realistic timelines. I plan to rectify this shortfall by dedicating more time to this goal in the next period and compensate for the previous period, aiming to reach not only my initial target, but also develop a more efficient approach to summarizing research material.
+                 </td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align:top; width: 50%; border:1px solid white; padding: 1.5%;">
+                            <h4>Communicator Competency: Enhance Communication Skills</h4>
+                            During period one, I prioritized meeting and establishing relationships with care professionals, both in formal and informal ways. Through these interactions, I have become more comfortable engaging with new colleagues and feel more confident in one-on-one conversations. Reflecting on these experiences, I recognize the value of building strong relationships, as it has enabled me to gain insights and support from experienced individuals in my field. In the future, I hope to extend this confidence in larger settings, as I believe strengthening my communication skills in groups will be crucial for collaboration. To do this, I will have to set small goals for each group meeting in which I would ask at least one valuable question or participate in the conversation in some way.    
+                        </td>
+                        <td style="vertical-align:top; width: 50%; border:1px solid white; padding-left: 2%;">
+                            <h4>Professional Competency: Engaging in Project Days</h4>
+                            The last learning goal motivated me to participate in project days to build connections with healthcare professionals. Participating in three project days with ChipSoft has been a valuable experience, helping me to build connections and observe professional interactions. However, I noticed a challenge in group settings, where I often hesitate to share my thoughts, likely out of self-doubt or fear of interrupting others. This hesitation has often limited my ability to contribute more effectively. Moving forward, I plan to work on this by setting small personal goals for each meeting, related to the communicator learning goal. Additionally, I aim to observe skilled communicators and adopt their techniques to improve my own engagement. I am hopeful that these steps will help me feel more confident and better equipped to participate actively in group discussions, thus leave a better impression during project days. I believe that it is essential to work on the communicator learning goal, to improve my progress in the professional competency.
+                             </p>     
+                        </td>
+                    </tr>
+                </table>
+    
+            <hr><h1> Reflection - Period 2</h1>
+            In Period 2, I made significant strides across my four key competencies: Expert, Investigator, Communicator, and Professional. Each area presented unique challenges and opportunities for growth, which I navigated with persistence and strategic planning.            
+            <table cellspacing="10%" cellpadding="10%" style="width: 100%; border:1px solid white;">
+                <tr>
+                    <td style="vertical-align:top; width: 50%; border:1px solid white; padding: 1.5%;">
+                        <h4>Expert Competency:</h4>
+                        My primary focus this period was on improving my data science and programming skills. Through practical experience and external guidance, I made tangible progress in programming, particularly while working on my portfolio and interdisciplinary project. Transitioning to tools like Visual Studio and GitHub was a turning point, enabling more efficient workflows and better version control. While challenges like formatting issues in coding persisted, seeking mentorship from colleagues like Hubert Bessems helped me gain valuable insights into debugging and time-saving techniques. Additionally, courses like Computational Thinking enhanced my understanding of problem-solving, although I noted a gap between theoretical learning and immediate project applications. This period reinforced the importance of balancing independent learning with collaborative support to build technical skills effectively.
+                    </td>
+                    <td style="vertical-align:top; width: 50%; border:1px solid white; padding-left: 2%;">
+                        <h4>Investigator Competency:</h4>
+                        In this competency, I focused on summarizing and critically analyzing academic literature relevant to prescribing cascades. I reviewed a diverse range of articles, with some offering valuable insights into methodologies like Prescription Sequence Symmetry Analysis (PSSA). However, I encountered instances where articles lacked the relevance I initially anticipated. This underlined the importance to adapt my learning goal slightly, also allowing to summarize articles related to interviewing methodologies. Changing my article selection process allowed me to be more strategic in aligning resources with project objectives of all periods. The lessons learned here have been pivotal in improving my research efficiency and aligning my summaries with project deliverables. Reflecting on how I created this initial learning goal, the goal lacked relevance for period 2 and 4.
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align:top; width: 50%; border:1px solid white; padding: 1.5%;">
+                        <h4>Communicator Competency:</h4>
+                        Developing confidence in professional interactions was a central goal this period, and I observed clear progress, especially in one-on-one settings. Meetings with colleagues like Jolanda Laar and Martine Lipsch provided valuable opportunities to practice assertiveness and active listening. I took proactive steps to participate in group activities such as workshops and social events, which enhanced my sense of belonging within the workplace. A particular highlight was taking the lead in an unexpected meeting, which pushed me out of my comfort zone but allowed me to demonstrate adaptability and leadership. While I feel more comfortable in smaller settings, group environments remain a focus for future growth, especially in maintaining confidence during moments of unexpected responsibility.
+                    </td>
+                    <td style="vertical-align:top; width: 50%; border:1px solid white; padding-left: 2%;">
+                        <h4>Professional Competency:</h4>
+                        Building a professional network within the healthcare sector was a major focus in Period 2. Events like the Maastricht Business Days and meetings with professionals from Medtronic and ConsultAssistent broadened my understanding of potential career paths. While not all conversations directly resulted in opportunities, they were instrumental in expanding my network and refining my approach to professional communication. The eventual success in securing an internship at Medtronic was a testament to the value of persistence and strategic networking. Additionally, conducting interviews with pharmacists provided deeper insights into the practical challenges of prescribing cascades and strengthened my ability to engage with experts effectively.</p>     
+                    </td>
+                </tr>
+            </table>
+            <div class="content-container">
+                <div style="width:20%; margin-right:5%; margin-left:5%;"><img src="duim.png" alt="logo" style="width: 100%;"></div> <div class="text-content"> <h4>Logbook:</h4>
+            One point of feedback after period 1 is to make a logbook with dates that I worked on my goals. At first, I created a table in word with the topic, date, and competency. However, I wanted to visualize it better, so I created a Canva road in which you can vertically see all the progress I have made, each competency having its own color. Reflecting on this, I should have done this in the first period already. To make a logbook is great for seeing progress, however making it the way I did in Canva is eye opening. By looking at the colors you see exactly in which competency you are still lacking to put effort in that period. For example, halfway through the period I saw I was missing some blue in my logbook, showing that I have spent to little time on my expert competency. The final goal was to have all colors approximately be there the same amount. I would recommend other students to also create a logbook and include colors in this. </div></div>
+            <h4>Overall Reflection:</h4>
+            Period 2 was a transformative phase, marked by incremental but meaningful progress across all competencies. By actively seeking feedback, embracing challenges, and leveraging external resources, I gained valuable insights into my strengths and areas for improvement. In the beginning of this period, I struggled with our coach being on holidays right after we received written feedback on the portfolio of period one. Some of the feedback I did not understand, and I could not ask for clarification as our substitute coach did not want to put us on wrong tracks. I hope that even though I am not sure if what I am doing is desired, I still manage to do what I am supposed to do. Moving forward, I aim to build on this foundation by addressing gaps, particularly in group communication and strategic article selection, while continuing to enhance my technical and professional expertise. During my last coach meeting we set up weakly goals, I like that this gave me a schedule to hold on to, and I am satisfied with the way I kept to my plan. Likewise, I have come up with more proof this period than the previous one, so I can see my portfolio improving overtime.
+            <br><br>For the next period, a large part of my focus will be aimed at the professional competency. I will conduct scientific interviews, and I will go to my first conference, the Health ICT conference in the MECC. Furthermore, I will have to find relevant topics to summarize for my investigator competency, improve my data science techniques by participating in the technical part of our interdisciplinary project, and I hope to be more relevant and seen at work.        
+        </section>
+  </div>
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show the selected section
+            const activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
+        }
+    </script>
+</body>
+</html>
