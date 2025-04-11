@@ -24,8 +24,8 @@
             background-color: #D1F6FF;
             font-size: 18px;
             line-height: 32px;
-            text-align: justify;
         }
+
 
         .back-button {
             position: center;
@@ -33,10 +33,11 @@
             color: #fff;
             border: none;
             cursor: pointer;
-            font-size: 17px;
+            font-size: 20px;
             font-family: 'rampart one', sans-serif;
             z-index: 1000;
             /* Ensures it stays on top */
+
         }
 
         .top-container {
@@ -45,37 +46,27 @@
             left: 0;
             width: 100%;
             background: #5BAEB7;
-            /* Only affects the header */
             z-index: 1000;
         }
 
         header {
             background: #5BAEB7;
-            /* Keeps the header background */
             color: #FFFFFF;
             text-align: center;
-            border-radius: 0px;
-            padding: 0px 0;
+            border-radius: 5px;
+            padding: 10px 0;
         }
 
         nav {
             display: flex;
             justify-content: center;
-            background: #D1F6FF;
-            /* Restores original background color */
+            background: #5BAEB7;
             padding: 10px 0;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-            /* Optional: Adds a shadow for better separation */
-        }
-
-        nav a {
-            color: #333;
-            /* Ensures the text remains readable */
         }
 
         .sections-container {
-            padding-top: 150px;
-            /* Prevents content from being hidden */
+            padding-top: 200px;
+            /* Adjust based on header + nav height */
         }
 
         nav a {
@@ -96,28 +87,16 @@
             display: none;
             position: absolute;
             top: 100%;
-            background: #e9f4f7ee;
+            background: #fff;
             padding: 10px;
             border-radius: 5px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
             z-index: 1000;
-            width: max-content;
-            opacity: 0;
-            /* Initially invisible */
-            visibility: hidden;
-            /* Prevents flickering */
         }
 
         .about-me:hover .about-me-dropdown,
         .learning-goals:hover .dropdown {
             display: block;
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .about-me,
-        .learning-goals {
-            position: relative;
         }
 
         .dropdown a {
@@ -320,7 +299,7 @@
             e.mans@student.maastrichtuniversity.nl<br>
             Coach: Joost Verbeek<br>
             HDT4050 – Interdisciplinary Project<br>
-            Portfolio period 4<br>
+            Portfolio period 2<br>
             </p>
         </section>
         <section id="choice">
@@ -371,7 +350,7 @@
 
         <section id="cv">
             <h2>Curriculum Vitae</h2>
-            <img src=" cv.png" style="width:80%">
+            <img src=" Curriculum_Vitae_Eva.png" style="width:80%">
         </section>
 
         <section id="education">
@@ -452,7 +431,7 @@
                     social, and me and another groupmate also scored equally high on action. </p>
                 </div>
             </div>
-            <h3>Change in tests</h3>
+            <h4>Change in tests</h4>
 
             I was interested in seeing the change I have made as a person during my Master. Therefore, I decided
             to retake the personality tests and compare the results from the beginning of the master and now.
@@ -634,7 +613,7 @@
 
         <section id="logbook">
             <h2 style="text-align: center;">Logbook</h2>
-            <img src="Logbook4.png" width="100%" style="display: block; margin: auto;">
+            <img src="timeline.png" width="60%" style="display: block; margin: auto;">
         </section>
 
         <section id="meetings">
@@ -709,7 +688,6 @@
                 </div>
                 <div style="width:30%; margin-right:0%; margin-left:0%;"><img src="04.png" alt="Me"></div>
             </div>
-            <hr>
             <div class="content-container">
                 <div style="width:30%; margin-right:0%; margin-left:0%;"><img src="05.png" alt="logo"
                         style="width: 100%;"></div>
@@ -728,37 +706,6 @@
                         made during my period at Maastro.
                     </p>
                 </div>
-            </div>
-            <hr>
-            <div class="content-container">
-                <div class="text-content">
-                    <h3>Session 6</h3>
-                    <p>For the sixth and last individual coach meeting we discussed my progress and how much there is
-                        left to do for
-                        me. During period four I was sick for two to three weeks, and in that time I did less on my
-                        portfolio than I
-                        had planned to do. For the investigator competency I was able to finish the whole role already
-                        before the
-                        coach meeting, for communicator with the plans I have I think I will be able to finish this goal
-                        as well.
-                        Then for professional I think I did enough, as I already focused a lot on this learning goal in
-                        the previous
-                        period. However, the goal I struggled the most with was to improve my data science skills. I had
-                        planned to
-                        do this by focusing on the technical part of my interdisciplinary project, however, this turned
-                        out to
-                        become less technical as expected. My coach gave me some tips what I could do for this learning
-                        goal
-                        instead. One example was to take a course in excel, as this will probably be a large part of my
-                        future.
-                        Another example of what I can do is to take a look into the slides that a fellow student made in
-                        SQL. I will
-                        try to do this in the next few weeks and then I believe that I have achieved the progress I
-                        wanted to make
-                        for my portfolio.</p>
-                </div>
-                <div style="width:30%; margin-right:0%; margin-left:0%; "><img src="06.png" alt="Me"
-                        style="width: 100%;"></div>
             </div>
         </section>
         <section id="expert" class="dropdown-section">
@@ -892,39 +839,6 @@
                 <br><br>PS. My recent course helped me understand the difference between coding and programming—happy to
                 say I got it right this time! 😉
             </p>
-            <h2>Period 4</h2>
-            <h4>SQL workshop </h4>
-            To refresh my basics of SQL, I worked through the slides that Pepa made for his workshop for PhD students. I
-            appreciated
-            how he clearly explained everything, the structure, the commands as “SELECT, WHERE, JOIN, & GROUP BY”, and
-            the logic
-            behind how databases are queried. Furthermore, I liked how interactive the slides were, even though I was
-            only going
-            through them on my own, they still showed me the steps of what to do. While going through the material on my
-            own, I ran
-            into a few things I struggled with. Luckily, Pepa told me I could always asked questions when I ran into
-            troubles. He
-            explained my challenges in an approachable way, which helped me to keep going and to not feel intimidated by
-            all the
-            commands.
-            <div class="content-container">
-                <div style="width:30%; margin-right: 5%;"> <img src="Pepa.png" alt="proof"
-                        style="width:100%;float:right;"></div>
-                <div class="text-content">
-                    <br>His lecture slides gave me insights into how SQL can be used to analyze data, something I might
-                    need to do in
-                    the future. It can be helpful to understand how patient records or treatment outcomes can be
-                    analyzed using simple
-                    queries, and how SQL fits into the broader world of data-driven decision-making.
-                    <br><br>Before going through the slides, I thought SQL would be much harder, but working through
-                    them at my own pace,
-                    and being able to ask Pepa for clarification when needed, made the difference. It showed me that
-                    with the right
-                    resources and support, I can keep improving my technical skills. I am grateful I could use his
-                    workshop to learn from
-                    myself.
-                </div>
-            </div>
         </section>
 
         <section id="investigator" class="dropdown-section">
@@ -1295,52 +1209,6 @@
             <p style="margin-left:30px;">Zhou, K., & Gattinger, G. (2025). The evolving regulatory paradigm of AI in
                 MedTech: A review of perspectives and where we are today. *Journal of Medical Technology Regulation*,
                 12(3), 245–262. https://doi.org/10.1016/j.medtech.2025.112578</p>
-            <hr>
-            <h4>Article 10</h4>
-            <img src="article10.png" alt="article" style="width:40%;margin-left:15px;float:right;"> Even though my goal
-
-            I wanted my last article to be about the NIS2 regulation, but then I found an article that was both about
-            the EU AI Act and the NIS2, so I decided to summarize that article.
-            <br><br><i>Authorship: </i>The article "Cybersecurity of medical devices: new challenges arising from the AI
-            Act and NIS 2 Directive proposals” has been authored by Elisabetta Biasin and Erik Kamenjašević. Both
-            authors have expertise in cybersecurity law and regulation, providing valuable insights into the challenges
-            and implications of emerging EU legislation on medical devices.
-            <br><br><i>Credibility: </i>A thorough analysis is provided of the regulatory challenges posed by the EU AI
-            Act and NIS2 Directive on medical device cybersecurity. The authors critically examine how these legislative
-            frameworks intersect with existing regulations such as the Medical Device Regulation (MDR), identifying
-            potential gaps or overlaps in compliance. The article serves as a credible source for understanding the
-            evolving landscape of AI-related medical device security as the authors evaluate regulatory risks and
-            propose policy recommendations.
-            <br><br><i>Relevance:</i> As the focus of my thesis lies within technology regulations in MedTechs, this
-            article is highly relevant as it explores the regulatory landscape governing AI-driven medical devices.
-            Understanding how AI and cybersecurity regulations impact MedTechs is crucial for the quality of my
-            research. This article deepens my knowledge of compliance requirements, potential regulatory fragmentation,
-            and the importance of harmonized oversight for technologies within healthcare.
-            <br><br><i>Summary: </i>The implications of the EU AI Act and NIS2 Directive for the cybersecurity of
-            medical devices are discussed, emphasizing the challenges posed by overlapping regulations. The authors
-            highlight concerns regarding fragmented implementation across member states of the EU and the need for a
-            coherent regulatory approach. The discussion extends to the importance of cybersecurity risk management,
-            legal accountability, and compliance obligations for manufacturers. By analyzing the interaction between
-            these two regulations and existing ones as the MDR, the article provides an in-depth understanding of
-            potential regulatory challenges and strategies to address them.
-            <br><br><i>GRADE Evaluation:</i> The GRADE Evaluation (Grading of Recommendations, Assessment, Development,
-            and
-            Evaluations) framework concludes the article demonstrates moderate to high quality evidence for
-            understanding regulatory challenges. While empirical data is not presented, the article presents a
-            well-reasoned analysis supported by relevant legislative texts and policy discussions. The strengths of
-            their recommendations are substantial, given the expertise of the authors and the comprehensive approach to
-            evaluating regulatory gaps and solutions. However, this document is more a policy analysis as a systematic
-            review, so the certainty of evidence remains moderate.
-            This article contributes to my understanding of the regulatory frameworks in MedTechs. I will save this
-            article for my thesis research, as I believe it provided me with a lot of information. My coach has
-            recommended me to use the GRADE Evaluation, so I included it in this article. The evaluation might have been
-            a bit less relevant on this specific article than it would have been on others, but it seems interesting to
-            investigate it deeper and to use it more in the future.
-
-            <p style="margin-left:30px;">Biasin, E., & Kamenjašević, E. (2022). Cybersecurity of medical devices: new
-                challenges arising from the AI Act and NIS 2 Directive proposals. International Cybersecurity Law
-                Review, 3(1), 163–180. https://doi.org/10.1365/s43439-022-00054-x</p>
-
 
         </section>
         <section id="communicator" class="dropdown-section">
@@ -1549,130 +1417,24 @@
             higher-level discussions so that my insights are recognized and valued. Strengthening this skill will not
             only enhance my contributions but also help establish my presence and expertise within the organization.
 
-            <div class="content-container">
-                <div style="width:30%; margin-right:5%; margin-left:5%;"><img src="cv.jpeg" alt="Me"
-                        style="width:100%;float:left;"></div>
-                <div class="text-content">
-                    <h4>Carnaval with Maastro</h4>
-                    The last event that I will participate before leaving Maastro is “ambtenarencarnaval”. First, a
-                    truck with
-                    fries will come to Maastro, and afterwards we would go towards the city. I was unsure whether I
-                    wanted to
-                    join or not. For the fries many people of my department would go, so I also signed up. But then,
-                    when going
-                    to the city, only 5 men who are much older than me would go, and no one else. I felt a bit awkward
-                    joining
-                    them, but they asked me to come anyways. I decided that I would join, as it will be the last chance
-                    I have
-                    to do something non-work related with them.<br><br>
-                    So after school I went to my work and we ate fries together. This was fun and not awkward at all, as
-                    we were
-                    with a large group. Then when going to the city center, more people from other departments also
-                    joined us,
-                    making it more fun then expected. We had a few drinks together, and after a few hours I left. As I
-                    reflected
-                    on these social activities before, I believe that it brings me benefits at work to connect with them
-                    on
-                    social level as well.<br><br>
-                    It was a fun evening, but I am not sure it brought me as much benefits as the previous social
-                    events. I
-                    believe that the people I was with this evening, I already have a good connection with, and at work
-                    it is
-                    always fun with them. I am happy that I went, and I still believe it is good to join to keep a
-                    connection
-                    with colleagues, but compared to the other events, I am not sure it brought me much benefit at work
-                    anymore.
-                    In the future when I am starting my full-time job, I plan to keep participating in social events
-                    next to
-                    work, as the experiences at Maastro taught me how valuable this is.
-                </div>
-            </div>
-
-            <div class="content-container">
-                <div class="text-content">
-                    <h4>Feedback on communication</h4>
-                    To check if my reflection on my communication at Maastro aligns with the thoughts of coworkers, I
-                    have sent
-                    a feedback form to three colleagues to assess my communication during these past few months. It was
-                    difficult to pick people, as most of my work was individual or with one specific colleague,
-                    Mariëlle.
-                    <br><br>First, I received feedback from Leonard. I did some work for him during my last weeks at
-                    Maastro,
-                    but not as much in the beginning. He was happy about the work I gave, but for him it was difficult
-                    to
-                    reflect on my progress. Then, I received feedback from Mariëlle. She is the one I worked the most
-                    for during
-                    these months, so her feedback is very valuable to me. She wrote that I am more confident in my
-                    communication
-                    as I started to become more knowledgeable about my work. Furthermore, she says I have gotten better
-                    at
-                    prioritizing, and that provide more feedback on work. Lastly, I do not just accept information, but
-                    I
-                    critically think about it, in her opinion. I am happy with her positive feedback and I believe it
-                    aligns
-                    with my reflection as well. She also wrote one point of improvement; to ask for feedback on my
-                    communication
-                    from time to time, as it can give surprising answers with concrete examples in which I can take
-                    action. I
-                    plan to do this more in the future and during my internship.
-                </div>
-                <div style="width:30%; margin-right:5%; margin-left:5%;"><img src="communicatie.png" alt="Me"
-                        style="width:100%;float:right;"></div>
-            </div>
-            <br>Lastly, I have received feedback from my boss. We did not work together much, but he always knew
-            what I was doing and for who I was working. He says my contribution is fine, and that I am more aware of my
-            surroundings, adapting my communication to this. He says that my communication has significantly improved
-            over these months, but that I can still be more pro-active. I see where this comes from. When working with
-            Mariëlle I believe that I am already pro-active, possibly also because I have worked as much for her and
-            that I was always deeply involved in these topics. When I worked together with Frank it was often that I was
-            in a meeting just to listen or make notes. In these kind of meetings I was barely noticeable as I was quite.
-            I agree with him that even in those kind of situations, I need to be more pro-active. He says I have to
-            speak my opinion and that I am allowed to be more confident. His feedback is incredibly relevant for me. I
-            am happy that he speaks very positive about me, for example he mentions in the feedback form that I was not
-            just a working student, but a worthy employee, and the fact that he keeps asking me to come back to work
-            here after my internship, and that he will not end my contract until it expires in October. I am going to
-            work on his feedback by trying to be more pro-active in the future. In his opinion, I always try to improve
-            myself after a round of feedback and I am usually successful at it.
-            <br><br>I believe this reflection on my communication was particularly relevant, as colleagues might
-            experience my communication different than I do. I am relieved with their positive points, and I plan to
-            work on their points of improvement. I am grateful to all my fellow employees for how they have treated me
-            over these past few months and I am partly sad to leave. I have learned a lot from them, both substantively,
-            but also communication wise. I believe I can start my next journey more confidently and more aware.
-            <br><br><a href="communicatie.pdf" target="_blank" rel="noopener noreferrer">Feedback form</a>
-
-            <div class="content-container">
-                <div style="width:30%; margin-right:5%; margin-left:5%;"><img src="mdt.jpg" alt="Me"
-                        style="width:100%;float:left;"></div>
-                <div class="text-content">
-                    <h4>Communication at Medtronic</h4>
-                    My first few days at the office at Medtronic have been a great experience. I was welcomed by some
-                    enthusiastic security
-                    guards who handed me a batch to access the property. Then, I met my supervisor, Gijs, who also
-                    greeted me happily. We
-                    started talking and I did not feel at unease or nervous at all. I met some other colleagues, and
-                    everyone was really
-                    kind to me. The morning, we worked together with my supervisor and one other colleague, then we had
-                    lunch together and
-                    we took a walk outside. The whole time we talked about everything there is to talk about. I am
-                    really happy with this.
-                    <br><br>I believe that by working on my communication skills at Maastro the past few months, it made
-                    it easier for me to be open
-                    here. The next day Gijs asked me how my first day was, and I told him I feel really at ease, and I
-                    was happy. He
-                    responded that sometimes interns can be timid, but that I was not. He was also happy with my
-                    communication.
-                    <br><br>I will try to listen to my feedback at Maastro to be more pro-active. But with the
-                    experience I had in this first week,
-                    I believe that I can. Gijs keeps asking me every day if I need something from him, and I think this
-                    makes it easy for me
-                    to go to him when I do need something. Furthermore, I told him I want to work some tasks that are
-                    not related to my
-                    thesis as well, as I want to learn something what you can do at Medtronic. I am looking forward to
-                    these next few
-                    months, and I will do my best to keep being open and social.
-                </div>
-            </div>
-
+            <h4>Carnaval with Maastro</h4>
+            The last event that I will participate before leaving Maastro is “ambtenarencarnaval”. First, a truck with
+            fries will come to Maastro, and afterwards we would go towards the city. I was unsure whether I wanted to
+            join or not. For the fries many people of my department would go, so I also signed up. But then, when going
+            to the city, only 5 men who are much older than me would go, and no one else. I felt a bit awkward joining
+            them, but they asked me to come anyways. I decided that I would join, as it will be the last chance I have
+            to do something non-work related with them.<br><br>
+            So after school I went to my work and we ate fries together. This was fun and not awkward at all, as we were
+            with a large group. Then when going to the city center, more people from other departments also joined us,
+            making it more fun then expected. We had a few drinks together, and after a few hours I left. As I reflected
+            on these social activities before, I believe that it brings me benefits at work to connect with them on
+            social level as well.<br><br>
+            It was a fun evening, but I am not sure it brought me as much benefits as the previous social events. I
+            believe that the people I was with this evening, I already have a good connection with, and at work it is
+            always fun with them. I am happy that I went, and I still believe it is good to join to keep a connection
+            with colleagues, but compared to the other events, I am not sure it brought me much benefit at work anymore.
+            In the future when I am starting my full-time job, I plan to keep participating in social events next to
+            work, as the experiences at Maastro taught me how valuable this is.
         </section>
 
         <section id="professional" class="dropdown-section">
@@ -2111,8 +1873,7 @@
                 this part is a general reflection.
             <table cellspacing="10%" cellpadding="10%" style="width: 100%; border:1px solid white;">
                 <tr>
-                    <td
-                        style="vertical-align:top; width: 50%; border:1px solid white; padding-left: 2%; text-align: justify">
+                    <td style="vertical-align:top; width: 50%; border:1px solid white; padding: 1.5%;">
                         <h4>Expert Competency: Enhancing Data Science and IT Skills</h4>
                         For the expert competency, the goal is to enhance my data science and IT skills. Initially, my
                         plan was to focus on this competency in the following periods. However, I found myself
@@ -2124,8 +1885,7 @@
                         the interdisciplinary project among others, which will provide additional opportunities for
                         growth and practice.
                     </td>
-                    <td
-                        style="vertical-align:top; width: 50%; border:1px solid white; padding-left: 2%; text-align: justify">
+                    <td style="vertical-align:top; width: 50%; border:1px solid white; padding-left: 2%;">
                         <h4>Investigator Competency: Summarizing Articles on PSSA</h4>
                         The initial goal for this period was to summarize three articles related to PSSA, but I
                         completed only two. I realize I underestimated the time required for thorough summaries, given
@@ -2137,8 +1897,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td
-                        style="vertical-align:top; width: 50%; border:1px solid white; padding-left: 2%; text-align: justify">
+                    <td style="vertical-align:top; width: 50%; border:1px solid white; padding: 1.5%;">
                         <h4>Communicator Competency: Enhance Communication Skills</h4>
                         During period one, I prioritized meeting and establishing relationships with care professionals,
                         both in formal and informal ways. Through these interactions, I have become more comfortable
@@ -2150,8 +1909,7 @@
                         group meeting in which I would ask at least one valuable question or participate in the
                         conversation in some way.
                     </td>
-                    <td
-                        style="vertical-align:top; width: 50%; border:1px solid white; padding-left: 2%; text-align: justify">
+                    <td style="vertical-align:top; width: 50%; border:1px solid white; padding-left: 2%;">
                         <h4>Professional Competency: Engaging in Project Days</h4>
                         The last learning goal motivated me to participate in project days to build connections with
                         healthcare professionals. Participating in three project days with ChipSoft has been a valuable
@@ -2176,8 +1934,7 @@
             persistence and strategic planning.
             <table cellspacing="10%" cellpadding="10%" style="width: 100%; border:1px solid white;">
                 <tr>
-                    <td
-                        style="vertical-align:top; width: 50%; border:1px solid white; padding-left: 2%; text-align: justify">
+                    <td style="vertical-align:top; width: 50%; border:1px solid white; padding: 1.5%;">
                         <h4>Expert Competency:</h4>
                         My primary focus this period was on improving my data science and programming skills. Through
                         practical experience and external guidance, I made tangible progress in programming,
@@ -2190,8 +1947,7 @@
                         immediate project applications. This period reinforced the importance of balancing independent
                         learning with collaborative support to build technical skills effectively.
                     </td>
-                    <td
-                        style="vertical-align:top; width: 50%; border:1px solid white; padding-left: 2%; text-align: justify">
+                    <td style="vertical-align:top; width: 50%; border:1px solid white; padding-left: 2%;">
                         <h4>Investigator Competency:</h4>
                         In this competency, I focused on summarizing and critically analyzing academic literature
                         relevant to prescribing cascades. I reviewed a diverse range of articles, with some offering
@@ -2206,8 +1962,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td
-                        style="vertical-align:top; width: 50%; border:1px solid white; padding-left: 2%; text-align: justify">
+                    <td style="vertical-align:top; width: 50%; border:1px solid white; padding: 1.5%;">
                         <h4>Communicator Competency:</h4>
                         Developing confidence in professional interactions was a central goal this period, and I
                         observed clear progress, especially in one-on-one settings. Meetings with colleagues like
@@ -2219,8 +1974,7 @@
                         smaller settings, group environments remain a focus for future growth, especially in maintaining
                         confidence during moments of unexpected responsibility.
                     </td>
-                    <td
-                        style="vertical-align:top; width: 50%; border:1px solid white; padding-left: 2%; text-align: justify">
+                    <td style="vertical-align:top; width: 50%; border:1px solid white; padding-left: 2%;">
                         <h4>Professional Competency:</h4>
                         Building a professional network within the healthcare sector was a major focus in Period 2.
                         Events like the Maastricht Business Days and meetings with professionals from Medtronic and
@@ -2239,312 +1993,35 @@
                         style="width: 100%;"></div>
                 <div class="text-content">
                     <h4>Logbook:</h4>
-                    <p style="text-align: justify">One point of feedback after period 1 is to make a logbook with dates
-                        that I worked on my goals. At
-                        first, I created a table in word with the topic, date, and competency. However, I wanted to
-                        visualize it better, so I created a Canva road in which you can vertically see all the progress
-                        I
-                        have made, each competency having its own color. Reflecting on this, I should have done this in
-                        the
-                        first period already. To make a logbook is great for seeing progress, however making it the way
-                        I
-                        did in Canva is eye opening. By looking at the colors you see exactly in which competency you
-                        are
-                        still lacking to put effort in that period. For example, halfway through the period I saw I was
-                        missing some blue in my logbook, showing that I have spent to little time on my expert
-                        competency.
-                        The final goal was to have all colors approximately be there the same amount. I would recommend
-                        other students to also create a logbook and include colors in this.</p>
+                    One point of feedback after period 1 is to make a logbook with dates that I worked on my goals. At
+                    first, I created a table in word with the topic, date, and competency. However, I wanted to
+                    visualize it better, so I created a Canva road in which you can vertically see all the progress I
+                    have made, each competency having its own color. Reflecting on this, I should have done this in the
+                    first period already. To make a logbook is great for seeing progress, however making it the way I
+                    did in Canva is eye opening. By looking at the colors you see exactly in which competency you are
+                    still lacking to put effort in that period. For example, halfway through the period I saw I was
+                    missing some blue in my logbook, showing that I have spent to little time on my expert competency.
+                    The final goal was to have all colors approximately be there the same amount. I would recommend
+                    other students to also create a logbook and include colors in this.
                 </div>
             </div>
             <h4>Overall Reflection:</h4>
-            <p style="text-align: justify">Period 2 was a transformative phase, marked by incremental but meaningful
-                progress across all competencies.
-                By actively seeking feedback, embracing challenges, and leveraging external resources, I gained valuable
-                insights into my strengths and areas for improvement. In the beginning of this period, I struggled with
-                our
-                coach being on holidays right after we received written feedback on the portfolio of period one. Some of
-                the
-                feedback I did not understand, and I could not ask for clarification as our substitute coach did not
-                want to
-                put us on wrong tracks. I hope that even though I am not sure if what I am doing is desired, I still
-                manage
-                to do what I am supposed to do. Moving forward, I aim to build on this foundation by addressing gaps,
-                particularly in group communication and strategic article selection, while continuing to enhance my
-                technical and professional expertise. During my last coach meeting we set up weakly goals, I like that
-                this
-                gave me a schedule to hold on to, and I am satisfied with the way I kept to my plan. Likewise, I have
-                come
-                up with more proof this period than the previous one, so I can see my portfolio improving overtime.
-                <br><br>For the next period, a large part of my focus will be aimed at the professional competency. I
-                will
-                conduct scientific interviews, and I will go to my first conference, the Health ICT conference in the
-                MECC.
-                Furthermore, I will have to find relevant topics to summarize for my investigator competency, improve my
-                data science techniques by participating in the technical part of our interdisciplinary project, and I
-                hope
-                to be more relevant and seen at work.
-            </p>
-
-            <hr>
-            <h1> Reflection - Period 4</h1>
-
-            <table cellspacing="10%" cellpadding="10%" style="width: 100%; border:1px solid white;">
-                <tr>
-                    <td
-                        style="vertical-align:top; width: 50%; border:1px solid white; padding-left: 2%; text-align: justify">
-                        <h4>Expert Competency:</h4>
-                        For my expert competency the goal was to improve my data science and IT techniques by designing
-                        and implementing
-                        digital tools using programming languages as Python and HTML. When creating this learning goal,
-                        the plan of our
-                        interdisciplinary project was to program a digital tool detecting prescribing cascades, and I
-                        had planned to take a
-                        part in that. Unfortunately, this plan was too ambitious, and the programming never happened. In
-                        period 1 and 2 this
-                        did not affect my learning goal much, however, the plan for period 4 was fully focused on this
-                        project. I had to
-                        adapt my plans; thus, I did a course in SQL. Due to these changes, I did less on my learning
-                        goal than I had hoped
-                        to do. However, in period 1 and 2 I did more than planned. Overall, I feel like I have achieved
-                        to improve my data
-                        science and IT techniques during these past few months. I refreshed my HTML skills, I learned to
-                        program in Python,
-                        and I learned the basics of SQL. Even though I might not program much in the future, I still
-                        feel like I have
-                        learned a lot from this. You learn not just the code, but the process of finding out how to
-                        code, as sort of a
-                        puzzle, until you get the desired result. It is these things behind the programming itself that
-                        feel even more
-                        valuable.
-                        <br><br>Reflecting on my skills before and after the duration of this portfolio, I feel more
-                        advanced in my computer
-                        skills due to all the tips I received and courses I took over these months. Even the small
-                        things as knowing how to
-                        analyze a website by pressing fn f12, or learning how to publish a site on GitHub feel so
-                        relevant. Initially, when
-                        aiming to improve my data science skills, I thought this would only include the programming and
-                        coding itself. However,
-                        I am glad I also took the opportunity to learn some small tricks.
-                        <br><br> I am glad that I created this learning goal and became an “expert” in the basics of
-                        data science. It was
-                        one of the learning goals I had fun with to work on, and that I was eager to keep improving on.
-                    </td>
-                    <td
-                        style="vertical-align:top; width: 50%; border:1px solid white; padding-left: 2%; text-align: justify">
-                        <h4>Investigator Competency:</h4>
-                        Over this period, I continued to refine my ability to summarize and critically analyze academic
-                        literature,
-                        building upon the lessons learned in previous periods. Initially, my learning goal focused on
-                        summarizing
-                        articles related to prescribing cascades, particularly those including Prescription
-                        Sequence Symmetry Analysis (PSSA). However, I recognized that my approach required further
-                        adaptation to
-                        align with my evolving research priorities and future professional objectives. In
-                        period 2 and period 4, my focus expanded beyond prescribing cascades. This proved beneficial, as
-                        I
-                        could strategically align my summaries with my broader academic and professional needs. I
-                        selected
-                        articles that would better prepare me for my
-                        upcoming internship. Specifically, I chose to focus on the EU AI Act and NIS2 directive,
-                        recognizing their
-                        relevance to my future work in digital health and regulatory frameworks. This shift underscored
-                        the
-                        importance of adaptability in my research approach—prioritizing sources that align with my
-                        immediate and
-                        long-term objectives.
-
-                        <br><br>Another adjustments I made was in how I evaluated the credibility of sources. In
-                        earlier periods, I placed a strong emphasis on reviewing the history and background of authors
-                        to determine
-                        credibility. While this approach could be useful, I found it to be an inefficient use of time.
-                        Instead, I shifted
-                        my focus to assessing whether the articles were peer-reviewed or published in reputable
-                        journals. This
-                        refinement allowed me to maintain high standards for source credibility while streamlining my
-                        research
-                        process.
-
-                        <br><br>Reflecting on the progress made throughout this learning process, I acknowledge that I
-                        have become
-                        more strategic and efficient in summarizing academic literature. Initially, I struggled with
-                        distinguishing
-                        essential information from less critical details, leading to lengthy and often redundant
-                        summaries. Over
-                        time, I developed techniques to streamline my summaries, ensuring that they are concise while
-                        capturing the
-                        core insights of each article. I also became more selective in my article choices, reducing time
-                        spent on
-                        sources that were unlikely to contribute meaningfully to my knowledge base.
-                        <br><br>While I have made considerable improvements, there are still areas for growth. I aim to
-                        further
-                        refine my summarization skills by enhancing my ability to synthesize information more
-                        effectively,
-                        particularly when dealing with complex regulatory and technical topics. Additionally, I plan to
-                        explore
-                        structured summary formats, such as executive summaries, to improve the clarity and impact of my
-                        work.
-                        <br><br>Overall, this period has reinforced the importance of adaptability and strategic
-                        thinking in
-                        academic research. By refining my approach to source credibility, expanding my scope of research
-                        topics, and
-                        focusing on relevant materials for my internship, I have significantly improved my efficiency
-                        and
-                        effectiveness in summarizing academic literature. Moving forward, I will continue to apply these
-                        lessons to
-                        enhance my ability to rapidly and accurately extract key insights from complex texts.
-                    </td>
-                </tr>
-                <tr>
-                    <td
-                        style="vertical-align:top; width: 50%; border:1px solid white; padding-left: 2%; text-align: justify">
-                        <h4>Communicator Competency:</h4>
-                        Throughout the master’s in Health and Digital Transformation, I have seen clear progress in my
-                        communicator competency
-                        in professional environments such as Maastro. One of the main challenges I initially faced was
-                        speaking up in larger or
-                        unfamiliar group settings. While I have always been comfortable in small groups, I used to
-                        hesitate in bigger meetings,
-                        often unsure about when or how to contribute.
-                        <br><br>To tackle this, I focused my SMART goal on improving my participation by preparing
-                        questions ahead of meetings
-                        and making sure to contribute actively in every group setting. Over time, I noticed positive
-                        changes, not only in my
-                        confidence but also in how others began to engage with me more. My contributions became more
-                        structured, and I found it
-                        easier to express thoughts clearly and concisely.
-                        <br><br>One piece of valuable advice from my coach was to ask colleagues at Maastro for feedback
-                        on my communication
-                        development. This allowed me to gain external perspectives and reflect on how much I have
-                        improved. It also reminded me
-                        that communication growth is not just about talking more, but about connecting meaningfully,
-                        listening actively, and
-                        presenting yourself in a professional yet approachable way.
-                        <br><br>An aspect of communication that I found particularly valuable at Maastro was the
-                        informal and social
-                        interactions with colleagues. These small conversations and relaxed moments helped create a more
-                        open and collaborative
-                        atmosphere. As I move toward my internship at Medtronic, I aim to carry this experience with me.
-                        I will try to create or
-                        join similar social moments there too, as I have realized how much they contribute to feeling
-                        comfortable in a
-                        professional environment, and how they make it easier to speak up when it matters.
-                        <br><br>In summary, I have developed from a quiet observer in professional settings into someone
-                        who prepares,
-                        contributes, and connects. While there is always room for growth, I now feel better equipped to
-                        participate in meetings
-                        with confidence, and I look forward to continuing this journey at Medtronic and beyond.
-                    </td>
-                    <td style="vertical-align:top; width: 50%; border:1px solid white; padding-left: 2%;">
-                        <h4>Professional Competency:</h4>
-                        The last learning goal was to build a network with healthcare professionals by participating in
-                        project days and having
-                        interviews. I am happy with how much I have done for this goal. I visited the MBD twice, I had
-                        six interviews, I went to
-                        the ICT&Health conference, and I tried to find my own internship by connecting with
-                        professionals. I have expanded my
-                        professional network intensively this year.
-                        <br><br>Main aspects I have learned from visiting professional events as the MBD and the
-                        conference is to become more
-                        comfortable in initiating talks with professionals. Even though I feel like I am still not where
-                        I want to be, I have
-                        made improvements to be more comfortable in these kinds of situations. I learned that everyone
-                        is there to connect, so I
-                        should not feel weird for doing that. I plan to keep going to conferences, and at each
-                        conference I am at I need to work
-                        on this learning goal, even after my studies.
-                        <br><br>As for the interviews, I am happy I took part in this section of our interdisciplinary
-                        project. The interviews
-                        always felt comfortable at the MUMC, but after performing the interviews, I am more confident to
-                        do so again during my
-                        internship. I need to make a good impression to connect with employees/interviewees, so it feels
-                        good to be more
-                        prepared, and that I have experienced the interviews once before.
-                        <br><br>Lastly, I am glad that I connected with many people to find my internship. One valuable
-                        aspect that I learned
-                        from this is to not be afraid to call. Even though in the end I managed to get my internship at
-                        Medtronic, the process
-                        with ConsultAssistent went much quicker. The main difference between the two is that with CA I
-                        immediately planned teams
-                        meetings and we discussed everything over the phone, and with Medtronic I did everything via
-                        email. Emails have so many
-                        delays, that it sometimes took people weeks to respond. If I would have to do it all over again,
-                        I would ask in the
-                        first emails that I sent out to plan a few minutes to make a call. I have learned from this, and
-                        I will keep this in
-                        mind in the future; if you want something, do not be afraid to call.
-                        </p>
-                    </td>
-                </tr>
-            </table>
-            <hr>
-            <h2>Feedback from interdisciplinary project</h2>
-            I received feedback of each member of my interdisciplinary project group about my contribution during these
-            past few months.
-            <br>
-            <h4>Bridget:</h4>
-            Eva has been very proactive from the start of the project, consistently bringing in new ideas and stepping
-            up to take on tasks that needed to be done. Her initiative and enthusiasm made a big difference to the
-            team’s progress. While working together on the interviews, I felt we formed a strong partnership and
-            supported each other well in preparing and executing the work. Her collaborative attitude and reliability
-            were truly appreciated.
-            <br>
-            <h4>Pepa:</h4>
-            Eva was active through the whole interdisciplinary project and made key efforts during interviews with the
-            pharmacist. She studied interviewing guidelines and did the interviews in a scientific way with ethical
-            approval, so the hospital will actually use them in the future. That said, she went an extra mile, which
-            created a positive impact and work above standards. During the project she was also a team player and
-            contributed to all relevant parts of the project. Moreover, she was always aware about all parts of the
-            project and had a helicopter view above it. That said, she was a valuable asset for the team, she was a team
-            player and always positively motivated to move forward.
-            <br>
-            <h4>Rafke:</h4>
-            Eva was a very pleasant team player. She remained focused and made sure that everyone was aware of each
-            other’s tasks, especially during more hectic periods. She put a lot of effort into completing the
-            qualitative part of the research and contributed significantly to the report. It was a pleasure working
-            together with Eva.
-            <br><br>I am happy with their feedback, and I think this aligns with my thoughts as well. I am happy with
-            the contributions of my team during this project, as well as my own. I think I worked better and more
-            proactively on this project compared to any I have done before.
-            <hr>
-            <h2>Final Reflection on My Portfolio</h2>
-            Looking back on my portfolio across the four periods, I can say that this has been a valuable and evolving
-            process of personal and academic growth. While I did not fully achieve every single goal exactly as
-            originally defined, I have made significant progress in all four competencies, and even exceeded my own
-            expectations in some areas. I have learned that success is not just about perfectly checking off goals, but
-            about reflecting, adapting, and growing along the way.
-            <br><br>That said, I am proud to say that I achieved all four of my SMART learning goals. Whether it was
-            improving my communication in professional environments, developing technical and data science skills,
-            learning how to summarize and evaluate research efficiently, or expanding my professional network, each goal
-            has been addressed with dedication and concrete results. Some goals took more time and effort than expected,
-            and some required a bit of adaptation along the way, but I met every one of them. Although I have achieved
-            these goals during the portfolio period, I know they are ongoing skills, and I will continue to work on them
-            throughout my studies, internship, and future career.
-            <br><br>In Period 1, I realized in hindsight that my reflections were quite limited. I tended to focus on
-            describing what I did, rather than deeply reflecting on how I felt, what I learned, or what I could improve.
-            However, as I progressed through the program, I actively worked on improving my reflective writing. I am
-            proud to see how my portfolio has developed, not just in content, but in the quality and depth of my
-            reflections. There is a clear difference between how I wrote in the beginning and how I reflect now.
-            <br><br>During the first period, we also started using Trello for our interdisciplinary project, which
-            turned out to be a great tool. It helped us organize our tasks, set deadlines, and maintain a good overview
-            of our project progress. I really enjoyed using it and felt that it added structure and clarity to our
-            teamwork, which is something I will definitely continue to use in future group projects.
-            <br><br>As for my learning goals, I worked on all of them consistently throughout the year. However, I
-            learned that some of them were too specific or narrowly defined in the beginning. For example, I had goals
-            tied very tightly to specific activities within the interdisciplinary project. When the project turned out
-            differently than expected, I realized I needed to broaden those goals to stay on track with my development.
-            This flexibility helped me stay motivated and ensured the goals stayed relevant, even when plans shifted.
-            <br><br>In Period 4, I had big plans to finish strong and make significant progress, especially on my Expert
-            goal. Unfortunately, I got pneumonia and a parasite, which meant I was sick for around three weeks and could
-            not do as much as I had hoped. Still, I picked things up again when I felt better, and I am proud of the
-            work I did despite the setback. I think this situation also showed me the importance of being kind to myself
-            and recognizing that sometimes circumstances are out of your control.
-            <br><br>Overall, this portfolio reflects my growth, not only in the competencies of expert, investigator,
-            communicator, and professional, but also in how I reflect, adapt, and respond to challenges. I have learned
-            that goals can evolve, that reflection is a skill you can develop, and that setbacks do not mean failure.
-            This process has prepared me not only for the remainder of my studies but also for my future at Medtronic
-            and beyond.
-
+            Period 2 was a transformative phase, marked by incremental but meaningful progress across all competencies.
+            By actively seeking feedback, embracing challenges, and leveraging external resources, I gained valuable
+            insights into my strengths and areas for improvement. In the beginning of this period, I struggled with our
+            coach being on holidays right after we received written feedback on the portfolio of period one. Some of the
+            feedback I did not understand, and I could not ask for clarification as our substitute coach did not want to
+            put us on wrong tracks. I hope that even though I am not sure if what I am doing is desired, I still manage
+            to do what I am supposed to do. Moving forward, I aim to build on this foundation by addressing gaps,
+            particularly in group communication and strategic article selection, while continuing to enhance my
+            technical and professional expertise. During my last coach meeting we set up weakly goals, I like that this
+            gave me a schedule to hold on to, and I am satisfied with the way I kept to my plan. Likewise, I have come
+            up with more proof this period than the previous one, so I can see my portfolio improving overtime.
+            <br><br>For the next period, a large part of my focus will be aimed at the professional competency. I will
+            conduct scientific interviews, and I will go to my first conference, the Health ICT conference in the MECC.
+            Furthermore, I will have to find relevant topics to summarize for my investigator competency, improve my
+            data science techniques by participating in the technical part of our interdisciplinary project, and I hope
+            to be more relevant and seen at work.
         </section>
     </div>
     <script>
